@@ -1,0 +1,121 @@
+% Thème utilisé ici 
+\usetheme{default}
+
+% Pour les images
+\RequirePackage{graphicx}
+\RequirePackage{amsmath}
+
+% Pour la police des expressions mathématiques ou du texte
+%\usefonttheme[onlymath]{serif}
+\usefonttheme{serif}
+
+\usepackage{ragged2e}
+%\usepackage{algorithmicx}
+\usepackage{algorithm}
+%\usepackage{algorithmic}
+%\usepackage{algpseudocode}
+
+% "..." en diagonale inverse pour l'écriture de la matrice 
+\newcommand{\revdots}{\reflectbox{$\ddots$}}
+\definecolor{myBlue}{RGB}{58,0,167}
+
+\setbeamertemplate{title page}{%
+\centering
+\color{myBlue}
+\vspace*{8pt}
+\includegraphics[scale=0.30]{Logo_LPTMC.png}
+\hspace*{15pt}
+\includegraphics[scale=0.065]{Logo_ENSC.jpg}
+\hspace*{15pt}
+\includegraphics[scale=0.03]{Logo_ENSTA.jpg}
+\hfill
+\includegraphics[scale=0.15]{parisSaclay.jpg}\\
+\vspace*{10pt}
+\large \textbf{\inserttitle} \\
+\vspace*{6pt}
+\normalsize \insertsubtitle \\
+\vspace*{10pt}
+\color{black}
+\rule{2cm}{0.5pt}\\
+\vspace{10pt}
+\normalsize \insertauthor\\
+\vspace*{10pt}
+\small \textit{\insertinstitute}\\
+
+\vspace{12pt}
+\color{myBlue}
+\insertdate\\
+\color{black}
+}
+
+
+
+
+
+\newcommand{\myDate}{28 septembre 2017}
+
+\setbeamertemplate{navigation symbols}{}
+
+
+% Page de garde
+\title[Parallélisation d'une méthode d'éléments finis]{Étude numérique des équations du groupe de renormalisation non perturbatif}
+\subtitle{Master 2 Analyse Modélisation Simulation}
+\author{Gaétan Facchinetti \\
+Encadré par : Nicolas Dupuis et Bertrand Delamotte}
+\institute{\textbf{Laboratoire de Physique Théorique de la Matière Condensée} \\ Université Paris-Saclay -- École Normale Supérieure Paris-Saclay \\ École Nationale Supérieure des Techniques Avancées - UVSQ}
+\date{\myDate{}}
+
+
+\setbeamertemplate{section in toc}{\inserttocsectionnumber.~\inserttocsection}
+
+
+\newcommand{\footHeadLine}{%
+%\logo{\pgfputat{\pgfxy(-1.0,1.2)}{\pgfbox[center,base]{\includegraphics[scale=0.1]{parisSaclay.jpg}}}}
+\setbeamertemplate{footline}{%
+\raggedright%
+\vspace*{-12pt}%
+\color{white}%
+\hspace*{2em}%
+{\hspace*{20pt} \sffamily\small\color{white} G. Facchinetti \hspace*{4pt}/ \hspace*{4pt} \myDate{}  \hfill \color{black}\thepage\hspace*{2em}}%
+\vspace*{2pt}%
+}%
+%
+\setbeamertemplate{headline}{%
+\ifnum \thesubsection>0%
+\vspace*{6pt}%
+\raggedright%
+\hspace*{5em}%
+{\sffamily\normalsize\bfseries\color{white}\thesection.~\insertsection\\}%
+\vspace*{3pt}
+\hspace*{9em}
+{\sffamily\small\bfseries\color{white}\thesubsection.~\insertsubsection}%
+\hspace*{2em}%
+\else 
+\vspace*{10pt}%
+\raggedright%
+\hspace*{5em}%
+{\sffamily\normalsize\bfseries\color{white}\thesection.~\insertsection\\}%
+\vspace*{3pt}
+\fi%
+}
+}
+
+\newcommand{\sommaire}{%
+\setbeamertemplate{footline}{}
+\setbeamertemplate{headline}{}
+\logo{}
+\begin{frame}
+	\vspace*{22pt}
+	\tableofcontents[currentsection]
+\end{frame}
+\footHeadLine{}
+}
+
+% On declare les images utilisee en logo et en fond
+\pgfdeclareimage[height=96mm,width=128mm]{fond}{Presentation.pdf}
+
+% On definit le fond
+\setbeamertemplate{background}{\pgfuseimage{fond}}
+
+
+

@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {french}
+\beamer@sectionintoc {1}{Introduction du probl\IeC {\`e}me}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Physique statistique, mod\IeC {\`e}le d'Ising et transitions de phase}{3}{0}{1}
+\beamer@sectionintoc {2}{Le groupe de renormalisation (RG)}{4}{0}{2}
