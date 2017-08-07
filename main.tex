@@ -4,6 +4,9 @@
 \usepackage{introLatex}
 \usepackage{shortcutLatex}
 \usepackage{layout}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
 
 % Dossier où se trouvent les images
 \graphicspath{{imagesdiapo/}}
@@ -41,16 +44,13 @@
 		\justifying
 		\vspace*{22pt}
 
-\textbf{A. Modèle d'Ising}
-
-
 
 \begin{multicols}{2}
 
 		$\bullet$ Modèle d'Ising 2D carré :
 		\begin{itemize}
 			\item Réseau carré de pas $a$.
-			\item $N_s$ spins à une composantes.
+			\item $N_s$ spins à une composante.
 		\end{itemize}
 	
 		
@@ -64,21 +64,23 @@
 
 $\bullet$ Spin et configuration :
 \begin{equation*}
- S_\rv \in \{-1,1\}, \quad \Mr = \{S_\rv\}_\rv
+ S_\rv \in \{-1(\downarrow),1(\uparrow)\}, \quad \Mr = \{S_\rv\}_\rv
 \end{equation*}
 
-$\bullet$ Energie d'une configuration $\Mr$ :
-\begin{equation*}
- \Hc(\Mr) = \sum_{\left< \rv, \rv' \right>} S_\rv S_{\rv'} - \sum_\rv b_\rv S_\rv	
-\end{equation*}
 
-$\bullet$ Probabilité d'une configuration :
+$\bullet$ Energie d'une config. $\Mr$ : $ \Hc(\Mr,b)$ \\
+\commentout{\begin{equation*}
+  \Hc(\Mr) = \sum_{\left< \rv, \rv' \right>} S_\rv S_{\rv'} - \sum_\rv b_\rv S_\rv	
+\end{equation*}}
+
+\vspace*{11pt}
+$\bullet$ Probabilité d'une config. $\Mr$ :
 \begin{equation*}
-p(\Mr) = \sum_\Mr \frac{1}{\Zc} \exp(-\Hc(\Mr)/(k_BT))
+p(\Mr,b) = \sum_\Mr \frac{1}{\Zc} \exp(-\Hc(\Mr,b)/(k_BT))
 \end{equation*}
 $\bullet$ Fonction de partition :
 \begin{equation*}
-\Zc = \sum_\Mr  \exp(-\Hc(\Mr)/(k_BT))
+\Zc = \sum_\Mr  \exp(-\Hc(\Mr,b)/(k_BT))
 \end{equation*}
 
 	\end{multicols}
@@ -89,7 +91,7 @@ $\bullet$ Fonction de partition :
 		\vspace*{22pt}
 	$\bullet$	Définition de l'aimantation :  
 		\begin{equation*}
-			m = \sum_{\Mr = \{S_\rv\}_\rv } p(\Mr) \( \frac{1}{N_s} \sum_\rv S_\rv\)  = \frac{1}{N_s\beta}\partial_\beta \ln\(\Zc \) 
+			m = \sum_{\Mr = \{S_\rv\}_\rv }  \left\{p(\Mr,b) \( \frac{1}{N_s} \sum_\rv S_\rv\) \right\}  = \frac{1}{N_s\beta}\partial_\beta \ln\(\Zc \) 
 		\end{equation*}
 		
 	\onslide<2->{	
@@ -109,17 +111,19 @@ $\bullet$ Fonction de partition :
 	
 	\vspace*{-11pt}
 	Invariance par échange de $\ev_z$ en $-\ev_z$ :\\
-	A $(b_\rv = 0, T=0)$  : $m=0$.\\
-	\vspace*{11pt}
-	
+	$\Hc(\Mr,b=0) = \Hc(-\Mr,b=0)$ \\
+	$\quad \diamond$ symétrie $\mathbb{Z}_2$ \\
+	$\quad \diamond$ à $(b = 0, T=0)$  : $m=0$. \\
+	\vspace*{8pt}}
+	\onslide<3->{
 	Mais problème : 
 	\begin{equation*}
-		\lim_{b \to 0} \(\lim_{N_s \to \infty} m \) = 0 \neq \lim_{N_s \to \infty} \( \lim_{b \to 0} m \)
+		\lim_{N_s \to \infty} \(\lim_{b \to 0} m \) = 0 \neq \lim_{b \to 0} \( \lim_{N_s \to \infty} m \)
 	\end{equation*}
+	
 	\end{multicols}
 	}
-	\vspace*{5pt}
-	\onslide<3->{
+	\onslide<4->{
 	\begin{center}
 $\Rightarrow$ {\Large Brisure de symétrie \& Transition de phase }
 \end{center}
@@ -168,6 +172,7 @@ $\Rightarrow$ {\Large Exposants critiques : $\eta$ et $\nu$ } } \\
 
 
 \setlength{\columnseprule}{0pt}
+\section{Groupe de renormalisation et objectif}
 \subsection{Le groupe de renormalisation (RG)}
 
 
@@ -215,7 +220,9 @@ $ \bullet $ $\|\pv \|_2 \in [0, \Lambda]$
 	\begin{frame}
 		\justifying
 		\vspace*{22pt}
-L'équation de flot BMW : 
+$\bullet$ L'équation de flot BMW à résoudre pour la symétrie $\mathbb{Z}_2$: \\
+\vspace*{11pt}
+\textit{Trouver $\Gamma_k^{(2)}$ tel que pour tout $\pv \in \R^2$ vérifiant $\|\pv\|_2 < \Lambda$, pour tout $\phi \in \R$ et pour tout $k \in ]0, \Lambda]$,}  
 \begin{equation*}
 \begin{split}
 	\partial_t \Gamma_{k}^{(2)}(\pv, \phi) & = J_3(\pv, \phi) {\( \partial_\phi \Gamma_{k}^{(2)}(\pv, \phi) \)}^2  - \frac{1}{2}  I_2(\phi) \, \partial_\phi^{2} \Gamma_{k}^{(2)}(\pv, \phi)
@@ -230,7 +237,7 @@ Avec les notations,
 \end{split}
 \label{eq:JI}
 \end{equation*}
-Définition du propagateur :
+Définition du propagateur et du régulateur
 \begin{equation*}
 G_k(\qv, \phi) = \frac{1}{\Gamma_k^{(2)}(\qv,\phiv)+ \Rc_k(\qv)}	
 \end{equation*}
@@ -238,7 +245,7 @@ Condition initiale en $k = \Lambda$ connue
 	\end{frame}
     
     
-    \subsection{Objectif}
+    \subsection{Objectifs}
     \begin{frame}
 		\justifying
 		\vspace*{22pt}
@@ -269,7 +276,7 @@ Condition initiale en $k = \Lambda$ connue
     \end{frame}
 
     
-    
+ \commentout{   
 
     
     \section{Le problème continu}
@@ -366,7 +373,7 @@ K = S_{d-1} \int_0^{+\infty} \dd\tq_2 \, \tq_2^{d-2} \int_{-\infty}^{+\infty} \d
 	
 	\end{frame}
 	
-	
+	}
 	
 	\section{Le problème du modèle d'Ising 2D}
     	
@@ -378,36 +385,146 @@ K = S_{d-1} \int_0^{+\infty} \dd\tq_2 \, \tq_2^{d-2} \int_{-\infty}^{+\infty} \d
 	\justifying
 	\vspace*{22pt}
 
+
 	$\bullet$ Réecriture de la fonction de partition :
-	
-	\begin{equation}
-  \Zc  \propto \int_\R \prod_{\rv} \, \dd \varphi_\rv \, \exp\(-\Hc_\mu[\varphi] \) \, ,
-\end{equation}
+\only<1>{
+\begin{equation*}
+\Zc = \sum_{\Mr = \{S_\rv\}_\rv} \exp\( -\Hc(\Mr,b=0)/ (k_BT)\)
+\end{equation*}
 avec l'hamiltonien $\Hc_\mu$ définit par 
-\begin{equation}
+\begin{equation*}
+  \Hc(\Mr, b=0) = -J\sum_{\left<  \rv, \rv'\right>} S_\rv S_{\rv'} \quad (J > 0)
+\end{equation*}
+}
+
+\only<2->{	
+	\begin{equation*}
+  \Zc  \propto \int_\R \prod_{\rv} \, \dd \varphi_\rv \, \exp\(-\Hc_\mu[\varphi] \) \, ,
+\end{equation*}
+
+avec l'hamiltonien $\Hc_\mu$ définit par 
+\begin{equation*}
   \Hc_\mu[\varphi] = \frac{1}{2} \int_\qv \varphi(\qv) \frac{1}{\lambda_\mu(\qv)} \varphi(-\qv) - \sum\limits_\rv \ln\(\cosh(\varphi_\rv)\) \, ,
-\end{equation}
+\end{equation*}
+}
+\onslide<3->{
+\begin{equation*}
+\text{Avec la notation des intégrales : }\int_\qv ... \, \equiv \, \int_{-\pi}^{\pi}	\int_{-\pi}^{\pi}	... \, \dd \, q_x \dd \, q_y
+\end{equation*}
+
+
+Nous avons aussi introduit les fonctions
+\begin{equation*}
+\begin{split}
+	\gamma(\qv ) & = \frac{1}{2} \(\cos(q_x) + \cos(q_y)\) \\
+	 \lambda_\mu(\qv) & = 2\beta\(2J \gamma(\qv) + \mu\) \, .
+	 \end{split}
+\end{equation*}}
 	
 	\end{frame}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	\begin{frame}
 	\justifying
 	\vspace*{22pt}
 
-	$\bullet$  :
+	$\bullet$ Résolution des équations BMW en trois étapes : \\
+	$\quad \diamond$ Intérêt des trois étapes  : precision du calcul \\
+	$\quad \diamond$ Mise en pratique : 3 systèmes à résoudre à la suite\\
+	\vspace*{11pt}
+	
+	$\bullet$ Première étape : \\
+	\vspace*{11pt}
+	{\itshape Trouver $(\Delta_k$, $X_k)$, solution de $(\Ec_1)$, i.e tels que pour tout $p_x \in [-\pi, \pi]$, $p_y \in [-\pi, \pi]$, $\phi \in \R$, $k\in [k_a, \Lambda]$}
+	\begin{align*}
+	\partial_t  \Delta_k (p_x, p_y, \phi) & = 
+	\begin{aligned}[t]
+	&  J_3(p_x, p_y, \phi) \partial_{\phi} \left\{ \Delta_k (p_x, p_y, \phi) + X_k(\phi) \right\} \\
+	&  - \frac{1}{2} I_2(\phi) \partial_{\phi}^2 \Delta_k(p_x, p_y, \phi) - I_3(\phi){(\partial_{\phi} X_k(\phi))}^2
+	\end{aligned}
+	\label{eqn} \\
+	\partial_t X_k(\phi) & = 
+	\begin{aligned}[t]
+		& \frac{1}{2} \partial_{\phi}^2 I_1(\phi) \, ,
+	\end{aligned}
+\end{align*}
+\textit{avec la condition intiale}
+	\begin{equation*}
+	\Delta_\Lambda(p_x, p_y, \phi) = 0 \quad \text{et} \quad X_\Lambda(\phi) =  \delta^2 \frac{1}{1+\tilde{\mu}} - \frac{2\delta^2\tilde{\beta} }{\cosh^2\(\delta\sqrt{2\tilde{\beta}}\phi\)}
+\end{equation*}
+	
 	
 	\end{frame}
 	
 	
-	\subsection{}
+	\subsection{Méthodes numériques}
 	
 	\begin{frame}
 	\justifying
 	\vspace*{22pt}
 
-	$\bullet$ Réecriture de la fonction de partition :
+	$\bullet$ Discrétisation en temps : schéma d'Euler explicite.\\
+	$\bullet$ Discrétisation en champ : grille fixe. Dérivée avec schéma à 5 points. \\
+	$\bullet$ Discrétisation en moment : méthode pseudo-spectrale \\
+	\vspace*{11pt}
+	$\quad \diamond$ Interpolation de Tchebytechev en deux dimensions : \\
+	
+	\vspace*{11pt}
+	
+	
+	\only<1>{Soit $f$ une fonction de deux variables de $[a,b]^2$ dans $\R$. On. note $\{x_n\}_{n}$ ou  $\{x_n\}_{n}$ l'ensemble des $n_c$ racines du polynôme de Tchebytchev d'ordre $n_c$. \\
+	\vspace*{8pt}
+	On. introduit : 
+	
+\begin{equation*}
+	\mat{F} = \( \(  f\(\frac{a+b}{2} + x_m\frac{b-a}{2}, \frac{a+b}{2} + y_n\frac{b-a}{2}\)     \)  \)_{m,n}
+\end{equation*}
+
+\vspace*{8pt}
+$\Rightarrow$ Approximation de rang faible de cette matrice
+
+}	
+	\only<2>{
+	
+	Algorithme d'approximation par élimination Gaussienne
+	
+	\begin{algorithm}[H]
+  \begin{algorithmic}[1]
+    \STATE Initialisation : $\mat{E}^0 = \mat{F}$; $\mat{F}_0 = 0$; $k = 1$;
+    \WHILE{ ${\| \mat{E}^k \|}_{\infty} < \varepsilon {\| \mat{E}^0 \|}_{\infty}$ }
+    \STATE $(i_k, j_k) =  {\text{argmax}}_{(i,j)} \left\{\left| \mat{E}^{k-1}_{i,j} \right| \right\}$
+    \STATE $\mat{C}^k_{j} = \mat{E}^k_{i_k,j}$;  $\mat{R}^k_{i} = \mat{E}^k_{i,j_k}$; $d_k = \mat{E}^k_{i_k,j_k}$
+    \STATE $\mat{E}^k_{i,j} = \mat{E}^{k-1}_{i,j} - d_k^{-1}\mat{C}^k_{j}\mat{R}^k_{i}$
+    \STATE $\mat{F}^k_{i,j} = \mat{F}^{k-1}_{i,j} + d_k^{-1}\mat{C}^k_{j}\mat{R}^k_{i}$
+    \ENDWHILE
+  \end{algorithmic}
+\end{algorithm}
+
+  \vspace*{-15pt}
+\begin{equation*}
+\mat{F} \simeq \sum_{j=1}^Q d_j \mat{C}^j \mat{R}^j \Rightarrow 
+f(x,y) \simeq \sum_{j=1}^Q d_jc^j(y)r^j(x)
+\end{equation*}
+
+}
 	
 	\end{frame}
+	
+		\begin{frame}
+	\justifying
+	\vspace*{22pt}
+	
+	$\quad \diamond$ Calcul des intégrales : quadrature de Gauss-Legendre
+	$\quad \diamond$ Utilisation des symétries
+		\end{frame}
 	
 
 \end{document}

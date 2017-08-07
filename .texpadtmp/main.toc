@@ -1,0 +1,12 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {french}
+\beamer@sectionintoc {1}{Introduction du probl\IeC {\`e}me}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Physique statistique et mod\IeC {\`e}le d'Ising}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Transition de phase}{8}{0}{1}
+\beamer@sectionintoc {2}{Groupe de renormalisation et objectif}{12}{0}{2}
+\beamer@subsectionintoc {2}{1}{Le groupe de renormalisation (RG)}{12}{0}{2}
+\beamer@subsectionintoc {2}{2}{Les \IeC {\'e}quations BMW}{13}{0}{2}
+\beamer@subsectionintoc {2}{3}{Objectifs}{14}{0}{2}
+\beamer@sectionintoc {3}{Le probl\IeC {\`e}me du mod\IeC {\`e}le d'Ising 2D}{18}{0}{3}
+\beamer@subsectionintoc {3}{1}{Mise en \IeC {\'e}quations}{18}{0}{3}
+\beamer@subsectionintoc {3}{2}{M\IeC {\'e}thodes num\IeC {\'e}riques}{23}{0}{3}
