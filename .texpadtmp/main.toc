@@ -3,10 +3,14 @@
 \beamer@sectionintoc {1}{Introduction du probl\IeC {\`e}me}{3}{0}{1}
 \beamer@subsectionintoc {1}{1}{Physique statistique et mod\IeC {\`e}le d'Ising}{3}{0}{1}
 \beamer@subsectionintoc {1}{2}{Transition de phase}{8}{0}{1}
-\beamer@sectionintoc {2}{Groupe de renormalisation et objectif}{12}{0}{2}
-\beamer@subsectionintoc {2}{1}{Le groupe de renormalisation (RG)}{12}{0}{2}
-\beamer@subsectionintoc {2}{2}{Les \IeC {\'e}quations BMW}{13}{0}{2}
-\beamer@subsectionintoc {2}{3}{Objectifs}{14}{0}{2}
-\beamer@sectionintoc {3}{Le probl\IeC {\`e}me du mod\IeC {\`e}le d'Ising 2D}{18}{0}{3}
-\beamer@subsectionintoc {3}{1}{Mise en \IeC {\'e}quations}{18}{0}{3}
-\beamer@subsectionintoc {3}{2}{M\IeC {\'e}thodes num\IeC {\'e}riques}{23}{0}{3}
+\beamer@subsectionintoc {1}{3}{Objectifs}{12}{0}{1}
+\beamer@sectionintoc {2}{Etude du mod\IeC {\`e}le d'Ising 2D : Mise en \IeC {\'e}quation}{16}{0}{2}
+\beamer@subsectionintoc {2}{1}{Calcul de la fonction de partition}{16}{0}{2}
+\beamer@subsectionintoc {2}{2}{Le NPRG et les \IeC {\'e}quations BMW}{20}{0}{2}
+\beamer@subsectionintoc {2}{3}{La r\IeC {\'e}solution en trois \IeC {\'e}tapes}{21}{0}{2}
+\beamer@sectionintoc {3}{Etude du mod\IeC {\`e}le d'Ising 2D : M\IeC {\'e}thodes num\IeC {\'e}riques}{22}{0}{3}
+\beamer@subsectionintoc {3}{1}{M\IeC {\'e}thode g\IeC {\'e}n\IeC {\'e}rale}{22}{0}{3}
+\beamer@subsectionintoc {3}{2}{Int\IeC {\'e}rpolation de Tchebytchev}{24}{0}{3}
+\beamer@subsectionintoc {3}{3}{Calcul des int\IeC {\'e}grales}{26}{0}{3}
+\beamer@sectionintoc {4}{Etude du mod\IeC {\`e}le d'Ising 2D : R\IeC {\'e}sultats}{27}{0}{4}
+\beamer@sectionintoc {5}{Conclusions}{29}{0}{5}

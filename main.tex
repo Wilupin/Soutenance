@@ -48,12 +48,9 @@
 \begin{multicols}{2}
 
 		$\bullet$ Modèle d'Ising 2D carré :
-		\begin{itemize}
-			\item Réseau carré de pas $a$.
-			\item $N_s$ spins à une composante.
-		\end{itemize}
-	
-		
+			$N_s$ spins à une composante sur un quadrillage
+			\vspace*{-11pt}
+			
 \begin{figure}[H]
 \begin{center}
 \includegraphics[scale =0.35]{Ising2D.pdf}
@@ -76,12 +73,13 @@ $\bullet$ Energie d'une config. $\Mr$ : $ \Hc(\Mr,b)$ \\
 \vspace*{11pt}
 $\bullet$ Probabilité d'une config. $\Mr$ :
 \begin{equation*}
-p(\Mr,b) = \sum_\Mr \frac{1}{\Zc} \exp(-\Hc(\Mr,b)/(k_BT))
+p(\Mr,b, T) = \frac{1}{\Zc} \exp\(-\frac{\Hc(\Mr,b)}{k_BT}\)
 \end{equation*}
 $\bullet$ Fonction de partition :
 \begin{equation*}
-\Zc = \sum_\Mr  \exp(-\Hc(\Mr,b)/(k_BT))
+\Zc(b,T) = \sum_\Mr \exp\(-\frac{\Hc(\Mr,b)}{k_BT}\)
 \end{equation*}
+\vfill
 
 	\end{multicols}
 \end{frame}
@@ -151,32 +149,34 @@ $\quad \diamond$ Fonction de corrélation à deux points :
 	G^{(2)}(|\rv_1 - \rv_2|) & \equiv \left< S_{\rv_1} S_{\rv_2} \right>   \equiv \sum_{\Mr}  p\(\Mr\) S_{\rv_1} S_{\rv_2} \, 
 	\end{split}
 \end{equation*}
+$\quad \diamond$ Longueur de corrélation $\xi$ : 
 \begin{equation*}
-	\text{Pour } T = T_c, \quad	 G^{(2)}(r) \widesim{r \to \infty} |r|^{2-d-\eta}, 
+G^{(2)}(r >\xi) \simeq 0 \quad \text{et} \quad G^{(2)}(r < \xi) \neq 0
 \end{equation*}
-$\quad \diamond$ Longueur de corrélation : 
-
-\begin{equation*}
-	\xi \widesim{T \to T_c} |T-T_c|^{-\nu} %\quad \text{et à } T = T_c, \quad	 G^{(2)}(r) \widesim{r \to \infty} |r|^{2-d-\eta}, 
-\end{equation*}
+\vspace*{2pt}
 }
 
 \onslide<3->{
-	\begin{center}
-$\Rightarrow$ {\Large Exposants critiques : $\eta$ et $\nu$ } } \\
-\end{center}
+$\bullet$ Exposants critiques $\eta$ et $\nu$ :
+\begin{equation*}
+	\xi \widesim{T \to T_c} |T-T_c|^{-\nu} \quad \text{et à } T = T_c, \quad	 G^{(2)}(r) \widesim{r \to \infty} |r|^{2-d-\eta}
+\end{equation*}
 
-\onslide<4->{$\bullet$ {Universalité des exposants critiques }}
+}
+
+\onslide<4->{
+\begin{center}
+$\Rightarrow$ {\Large Universalité des exposants critiques }
+\end{center}
+}
 
 	\end{frame}
 
 
 \setlength{\columnseprule}{0pt}
-\section{Groupe de renormalisation et objectif}
-\subsection{Le groupe de renormalisation (RG)}
 
 
-
+\commentout{
 	\begin{frame}
 		\justifying
 		\vspace*{22pt}
@@ -212,38 +212,8 @@ $ \bullet $ $\|\pv \|_2 \in [0, \Lambda]$
 	$\bullet$ En pratique :  $\Zc_k \underset{\text{NPRG}}{\longrightarrow} \Gamma_k   \underset{\text{BMW}}{\longrightarrow} \Gamma^{(2)}_k$
 	\end{frame}
 	
+}
 
-	
-	
-	\subsection{Les équations BMW}
-
-	\begin{frame}
-		\justifying
-		\vspace*{22pt}
-$\bullet$ L'équation de flot BMW à résoudre pour la symétrie $\mathbb{Z}_2$: \\
-\vspace*{11pt}
-\textit{Trouver $\Gamma_k^{(2)}$ tel que pour tout $\pv \in \R^2$ vérifiant $\|\pv\|_2 < \Lambda$, pour tout $\phi \in \R$ et pour tout $k \in ]0, \Lambda]$,}  
-\begin{equation*}
-\begin{split}
-	\partial_t \Gamma_{k}^{(2)}(\pv, \phi) & = J_3(\pv, \phi) {\( \partial_\phi \Gamma_{k}^{(2)}(\pv, \phi) \)}^2  - \frac{1}{2}  I_2(\phi) \, \partial_\phi^{2} \Gamma_{k}^{(2)}(\pv, \phi)
-\end{split}
-\label{eq:flotBMW}
-\end{equation*}
-Avec les notations,
-\begin{equation*}
-\begin{split}
-	J_n(\pv,\phi) & = \int_\qv \partial_t \Rc_k(\qv) \,G_k(\pv+\qv, \phi) \,G_k^{n-1}(\qv, \phi) \, ,  \\
-	I_n(\pv,\phi) & = \int_\qv \partial_t \Rc_k(\qv) \,G_k^{n}(\qv, \phi) \, .
-\end{split}
-\label{eq:JI}
-\end{equation*}
-Définition du propagateur et du régulateur
-\begin{equation*}
-G_k(\qv, \phi) = \frac{1}{\Gamma_k^{(2)}(\qv,\phiv)+ \Rc_k(\qv)}	
-\end{equation*}
-Condition initiale en $k = \Lambda$ connue
-	\end{frame}
-    
     
     \subsection{Objectifs}
     \begin{frame}
@@ -375,9 +345,9 @@ K = S_{d-1} \int_0^{+\infty} \dd\tq_2 \, \tq_2^{d-2} \int_{-\infty}^{+\infty} \d
 	
 	}
 	
-	\section{Le problème du modèle d'Ising 2D}
+	\section{Etude du modèle d'Ising 2D : Mise en équation}
     	
-    	\subsection{Mise en équations}
+    	\subsection{Calcul de la fonction de partition}
     	
     	\sommaire{}
    	
@@ -391,9 +361,9 @@ K = S_{d-1} \int_0^{+\infty} \dd\tq_2 \, \tq_2^{d-2} \int_{-\infty}^{+\infty} \d
 \begin{equation*}
 \Zc = \sum_{\Mr = \{S_\rv\}_\rv} \exp\( -\Hc(\Mr,b=0)/ (k_BT)\)
 \end{equation*}
-avec l'hamiltonien $\Hc_\mu$ définit par 
+avec l'hamiltonien $\Hc$ définit par 
 \begin{equation*}
-  \Hc(\Mr, b=0) = -J\sum_{\left<  \rv, \rv'\right>} S_\rv S_{\rv'} \quad (J > 0)
+  \Hc(\Mr = \{S_\rv \}_\rv, b=0) = -J\sum_{\left<  \rv, \rv'\right>} S_\rv S_{\rv'} \quad (J > 0)
 \end{equation*}
 }
 
@@ -412,32 +382,63 @@ avec l'hamiltonien $\Hc_\mu$ définit par
 \text{Avec la notation des intégrales : }\int_\qv ... \, \equiv \, \int_{-\pi}^{\pi}	\int_{-\pi}^{\pi}	... \, \dd \, q_x \dd \, q_y
 \end{equation*}
 
-
+\commentout{
 Nous avons aussi introduit les fonctions
 \begin{equation*}
 \begin{split}
 	\gamma(\qv ) & = \frac{1}{2} \(\cos(q_x) + \cos(q_y)\) \\
 	 \lambda_\mu(\qv) & = 2\beta\(2J \gamma(\qv) + \mu\) \, .
 	 \end{split}
-\end{equation*}}
+\end{equation*}}}
 	
 	\end{frame}
 	
 	
 	
+	\subsection{Le NPRG et les équations BMW}
+
+	\begin{frame}
+		\justifying
+		\vspace*{22pt}
+$\bullet$ L'équation de flot BMW à résoudre pour la symétrie $\mathbb{Z}_2$: \\
+\vspace*{11pt}
+\textit{Trouver $\Gamma_k^{(2)}$ tel que pour tout $\pv \in \R^2$ vérifiant $\|\pv\|_2 < \Lambda$, pour tout $\phi \in \R$ et pour tout $k \in ]0, \Lambda]$,}  
+\begin{equation*}
+\begin{split}
+	\partial_t \Gamma_{k}^{(2)}(\pv, \phi) & = J_3(\pv, \phi) {\( \partial_\phi \Gamma_{k}^{(2)}(\pv, \phi) \)}^2  - \frac{1}{2}  I_2(\phi) \, \partial_\phi^{2} \Gamma_{k}^{(2)}(\pv, \phi)
+\end{split}
+\label{eq:flotBMW}
+\end{equation*}
+Avec les notations,
+\begin{equation*}
+\begin{split}
+	J_n(\pv,\phi) & = \int_\qv \partial_t \Rc_k(\qv) \,G_k(\pv+\qv, \phi) \,G_k^{n-1}(\qv, \phi) \, ,  \\
+	I_n(\pv,\phi) & = \int_\qv \partial_t \Rc_k(\qv) \,G_k^{n}(\qv, \phi) \, .
+\end{split}
+\label{eq:JI}
+\end{equation*}
+Définition du propagateur et du régulateur
+\begin{equation*}
+G_k(\qv, \phi) = \frac{1}{\Gamma_k^{(2)}(\qv,\phiv)+ \Rc_k(\qv)}	
+\end{equation*}
+Condition initiale en $k = \Lambda$ connue
+	\end{frame}
+    
 	
 	
 	
 	
 	
 	
+	\subsection{La résolution en trois étapes}
+
 	
 	\begin{frame}
 	\justifying
 	\vspace*{22pt}
 
 	$\bullet$ Résolution des équations BMW en trois étapes : \\
-	$\quad \diamond$ Intérêt des trois étapes  : precision du calcul \\
+	$\quad \diamond$ Intérêt des trois étapes  : précision du calcul \\
 	$\quad \diamond$ Mise en pratique : 3 systèmes à résoudre à la suite\\
 	\vspace*{11pt}
 	
@@ -465,7 +466,10 @@ Nous avons aussi introduit les fonctions
 	\end{frame}
 	
 	
-	\subsection{Méthodes numériques}
+	\section{Etude du modèle d'Ising 2D : Méthodes numériques}
+	\subsection{Méthode générale}
+	
+	\sommaire{}
 	
 	\begin{frame}
 	\justifying
@@ -474,7 +478,17 @@ Nous avons aussi introduit les fonctions
 	$\bullet$ Discrétisation en temps : schéma d'Euler explicite.\\
 	$\bullet$ Discrétisation en champ : grille fixe. Dérivée avec schéma à 5 points. \\
 	$\bullet$ Discrétisation en moment : méthode pseudo-spectrale \\
+	$\bullet$ Calcul des intégrales : quadrature de Gauss-Legendre \\
 	\vspace*{11pt}
+	
+	\end{frame}
+	
+	\subsection{Intérpolation de Tchebytchev}
+	
+	\begin{frame}
+	\justifying
+	\vspace*{22pt}
+	
 	$\quad \diamond$ Interpolation de Tchebytechev en deux dimensions : \\
 	
 	\vspace*{11pt}
@@ -482,7 +496,7 @@ Nous avons aussi introduit les fonctions
 	
 	\only<1>{Soit $f$ une fonction de deux variables de $[a,b]^2$ dans $\R$. On. note $\{x_n\}_{n}$ ou  $\{x_n\}_{n}$ l'ensemble des $n_c$ racines du polynôme de Tchebytchev d'ordre $n_c$. \\
 	\vspace*{8pt}
-	On. introduit : 
+	On introduit : 
 	
 \begin{equation*}
 	\mat{F} = \( \(  f\(\frac{a+b}{2} + x_m\frac{b-a}{2}, \frac{a+b}{2} + y_n\frac{b-a}{2}\)     \)  \)_{m,n}
@@ -518,6 +532,7 @@ f(x,y) \simeq \sum_{j=1}^Q d_jc^j(y)r^j(x)
 	
 	\end{frame}
 	
+	\subsection{Calcul des intégrales}
 		\begin{frame}
 	\justifying
 	\vspace*{22pt}
@@ -525,6 +540,44 @@ f(x,y) \simeq \sum_{j=1}^Q d_jc^j(y)r^j(x)
 	$\quad \diamond$ Calcul des intégrales : quadrature de Gauss-Legendre
 	$\quad \diamond$ Utilisation des symétries
 		\end{frame}
+		
+		\section{Etude du modèle d'Ising 2D : Résultats}
+		\sommaire{}
+		\begin{frame}
+	\justifying
+	\vspace*{22pt}
+	
+	\begin{figure}[H]
+\begin{center}
+	\includegraphics[scale=0.7]{MesuRes.pdf}
+\end{center}
+\caption{Évolution de $\eta_k$ en fonction de $t$ pour différentes valeurs de la températue $T$.}
+\label{fig:etaMesu}
+\end{figure}
+
+$\bullet$ Encadrement de la température critique
+\begin{equation}
+2.350 \, J/k_B < T_c^{BMW}  < 2.375 \, J/k_B
+\end{equation}
+
+$\bullet $ Comparaison à la température théorique attendue
+\begin{equation}
+	err = \frac{ |T_c^{BMW} - T_c^{th}|}{T_c^{th}} \sim 4 \%
+\end{equation}
+
+
+
+	
+	\end{frame}
+	
+	
+	\section{Conclusions}
+		\begin{frame}
+	\justifying
+	\vspace*{22pt}
+	
+	\end{frame}
+	
 	
 
 \end{document}
