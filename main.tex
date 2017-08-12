@@ -356,18 +356,25 @@ K = S_{d-1} \int_0^{+\infty} \dd\tq_2 \, \tq_2^{d-2} \int_{-\infty}^{+\infty} \d
 	\vspace*{22pt}
 
 
-	$\bullet$ Réecriture de la fonction de partition :
+$\bullet$ Calcul de $T_c$ pour le modèle d'Ising avec la méthode NPRG et l'approximation BMW. Comparaison avec le résultat du calcul exact.\\
+
+\vspace*{11pt}
+
+
+	
 \only<1>{
+	$\bullet$ Fonction de partition Ising Ising 2D :
 \begin{equation*}
-\Zc = \sum_{\Mr = \{S_\rv\}_\rv} \exp\( -\Hc(\Mr,b=0)/ (k_BT)\)
+\Zc = \sum_{\Mr = \{S_\rv\}_\rv} \exp\( -\frac{\Hc(\Mr,b=0)}{k_BT}\) \, ,
 \end{equation*}
 avec l'hamiltonien $\Hc$ définit par 
 \begin{equation*}
-  \Hc(\Mr = \{S_\rv \}_\rv, b=0) = -J\sum_{\left<  \rv, \rv'\right>} S_\rv S_{\rv'} \quad (J > 0)
+\Hc(\Mr = \{S_\rv \}_\rv, b=0) = -J\sum_{\left<  \rv, \rv'\right>} S_\rv S_{\rv'} \quad (J > 0)
 \end{equation*}
 }
 
 \only<2->{	
+$\bullet$ Réécriture de la fonction de partition : 
 	\begin{equation*}
   \Zc  \propto \int_\R \prod_{\rv} \, \dd \varphi_\rv \, \exp\(-\Hc_\mu[\varphi] \) \, ,
 \end{equation*}
@@ -376,11 +383,12 @@ avec l'hamiltonien $\Hc_\mu$ définit par
 \begin{equation*}
   \Hc_\mu[\varphi] = \frac{1}{2} \int_\qv \varphi(\qv) \frac{1}{\lambda_\mu(\qv)} \varphi(-\qv) - \sum\limits_\rv \ln\(\cosh(\varphi_\rv)\) \, ,
 \end{equation*}
-}
-\onslide<3->{
+
+avec $\mu > 1$, un réel, $\lambda_\mu$ une fonction $\Cc^\infty$ et la notation
 \begin{equation*}
-\text{Avec la notation des intégrales : }\int_\qv ... \, \equiv \, \int_{-\pi}^{\pi}	\int_{-\pi}^{\pi}	... \, \dd \, q_x \dd \, q_y
+\int_\qv ... \, \equiv \, \int_{-\pi}^{\pi}	\int_{-\pi}^{\pi}	... \, \dd \, q_x \dd \, q_y
 \end{equation*}
+}
 
 \commentout{
 Nous avons aussi introduit les fonctions
@@ -389,7 +397,7 @@ Nous avons aussi introduit les fonctions
 	\gamma(\qv ) & = \frac{1}{2} \(\cos(q_x) + \cos(q_y)\) \\
 	 \lambda_\mu(\qv) & = 2\beta\(2J \gamma(\qv) + \mu\) \, .
 	 \end{split}
-\end{equation*}}}
+\end{equation*}}
 	
 	\end{frame}
 	
@@ -413,7 +421,7 @@ Avec les notations,
 \begin{equation*}
 \begin{split}
 	J_n(\pv,\phi) & = \int_\qv \partial_t \Rc_k(\qv) \,G_k(\pv+\qv, \phi) \,G_k^{n-1}(\qv, \phi) \, ,  \\
-	I_n(\pv,\phi) & = \int_\qv \partial_t \Rc_k(\qv) \,G_k^{n}(\qv, \phi) \, .
+	I_n(\pv) & = J_n(\pv = 0,\phi) = \int_\qv \partial_t \Rc_k(\qv) \,G_k^{n}(\qv, \phi) \, .
 \end{split}
 \label{eq:JI}
 \end{equation*}
@@ -421,7 +429,7 @@ Définition du propagateur et du régulateur
 \begin{equation*}
 G_k(\qv, \phi) = \frac{1}{\Gamma_k^{(2)}(\qv,\phiv)+ \Rc_k(\qv)}	
 \end{equation*}
-Condition initiale en $k = \Lambda$ connue
+Condition initiale en $k = \Lambda$ connue, dépend de $\Hc_\mu$.
 	\end{frame}
     
 	
