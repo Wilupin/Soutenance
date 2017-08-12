@@ -16,6 +16,13 @@
   \mathrel{\underset{#2}{\scalebox{#1}[1]{$\sim$}}}
   }
 
+\newcommand*{\sepfbox}[1]{%
+  \begingroup
+    \sbox0{\fbox{#1}}%
+    \setlength{\fboxrule}{0pt}%
+    \fbox{\kern-\fboxsep\fbox{\unhbox0}\kern-\fboxsep}%
+  \endgroup
+}
 
 \begin{document}
 
@@ -408,28 +415,36 @@ Nous avons aussi introduit les fonctions
 	\begin{frame}
 		\justifying
 		\vspace*{22pt}
-$\bullet$ L'équation de flot BMW à résoudre pour la symétrie $\mathbb{Z}_2$: \\
-\vspace*{11pt}
-\textit{Trouver $\Gamma_k^{(2)}$ tel que pour tout $\pv \in \R^2$ vérifiant $\|\pv\|_2 < \Lambda$, pour tout $\phi \in \R$ et pour tout $k \in ]0, \Lambda]$,}  
+$\bullet$ L'équation de flot BMW à résoudre (pour la symétrie $\mathbb{Z}_2$) : \\
+
+\sepfbox{
+\begin{minipage}{300pt}
+\textit{Trouver $\Gamma_k^{(2)}$ tel que pour tout $\pv \in \R^2$ vérifiant $\|\pv\|_2 < \Lambda$, pour tout $\phi \in \R$,}  
 \begin{equation*}
 \begin{split}
-	\partial_t \Gamma_{k}^{(2)}(\pv, \phi) & = J_3(\pv, \phi) {\( \partial_\phi \Gamma_{k}^{(2)}(\pv, \phi) \)}^2  - \frac{1}{2}  I_2(\phi) \, \partial_\phi^{2} \Gamma_{k}^{(2)}(\pv, \phi)
+	\partial_t \Gamma_{k}^{(2)}(\pv, \phi) & = J_3(\pv, \phi) {\( \partial_\phi \Gamma_{k}^{(2)}(\pv, \phi) \)}^2  - \frac{1}{2}  I_2(\phi) \, \partial_\phi^{2} \Gamma_{k}^{(2)}(\pv, \phi) \quad \forall k \in ]0, \Lambda]
 \end{split}
 \label{eq:flotBMW}
 \end{equation*}
-Avec les notations,
+\end{minipage}}
+\vspace*{11pt}
+\begin{minipage}[b]{300pt}
+\textit{Avec les notations, $\partial_t ... = k \partial_k ...$ et }
 \begin{equation*}
 \begin{split}
-	J_n(\pv,\phi) & = \int_\qv \partial_t \Rc_k(\qv) \,G_k(\pv+\qv, \phi) \,G_k^{n-1}(\qv, \phi) \, ,  \\
-	I_n(\pv) & = J_n(\pv = 0,\phi) = \int_\qv \partial_t \Rc_k(\qv) \,G_k^{n}(\qv, \phi) \, .
+	J_n(\pv,\phi) = \int_\qv \partial_t \Rc_k(\qv) \,G_k(\pv+\qv, \phi) \,G_k^{n-1}(\qv, \phi) \, , \quad I_n(\pv)  = J_n(\pv = 0,\phi).
 \end{split}
 \label{eq:JI}
 \end{equation*}
-Définition du propagateur et du régulateur
 \begin{equation*}
-G_k(\qv, \phi) = \frac{1}{\Gamma_k^{(2)}(\qv,\phiv)+ \Rc_k(\qv)}	
+\begin{split}
+\textit{(propagateur)} & \quad G_k(\qv, \phi) = \frac{1}{\Gamma_k^{(2)}(\qv,\phiv)+ \Rc_k(\qv)} \\
+\textit{(régulateur)} & \quad  \Rc_k(\qv) \in \Cc^{\infty}(\R^{d+1}) \quad \text{tq.} \quad \lim_{\|\qv\|_2 \to \infty} \partial_t^m \Rc_k(\qv,\phi) = 0 \quad	\forall m \in \N^*
+\end{split}
 \end{equation*}
-Condition initiale en $k = \Lambda$ connue, dépend de $\Hc_\mu$.
+$\bullet$ Condition initiale : en $k = \Lambda$, dépend de $\Hc_\mu$. \\
+$\bullet$ Objectif : Calculer $\Gamma_k^{(2)}$ en $k \to 0$.
+\end{minipage}
 	\end{frame}
     
 	
@@ -473,6 +488,18 @@ Condition initiale en $k = \Lambda$ connue, dépend de $\Hc_\mu$.
 	
 	\end{frame}
 	
+	
+	\begin{frame}
+	\justifying
+	\vspace*{22pt}
+	
+	$\bullet$ Problème :
+	\begin{equation}
+		\partial_t \Rc_k	
+	\end{equation}
+
+	
+		\end{frame}
 	
 	\section{Etude du modèle d'Ising 2D : Méthodes numériques}
 	\subsection{Méthode générale}
@@ -577,12 +604,31 @@ $\bullet $ Comparaison à la température théorique attendue
 
 	
 	\end{frame}
-	
+
 	
 	\section{Conclusions}
+	
+	\sommaire{}
+	
 		\begin{frame}
 	\justifying
 	\vspace*{22pt}
+	
+	$\bullet$ Une première étude sans grandes avancées. \\
+	\vspace*{5pt}
+		$\quad \diamond$ Réorganisation du code \\
+		$\quad \diamond$ Réécriture de la méthode de quadrature \\
+		$\quad \diamond$ Quelques changements sans résultats conséquents\\
+	
+	\vspace*{15pt}
+	
+	$\bullet$ Une seconde étude inachevée mais avec des résultats\\
+		\vspace*{5pt}
+	$\quad \diamond$ Mise en place de différentes techniques numériques\\
+	$\quad \diamond$ Tentative de résolution de problèmes de temps de calculs\\
+	$\quad \diamond$ Résultats pour une première série de test : erreur de 4 \%\\
+	$\quad \diamond$ Résultats contrastée car erreurs numériques
+	
 	
 	\end{frame}
 	
