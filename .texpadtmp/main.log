@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.6)  12 AUG 2017 21:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.6)  13 AUG 2017 19:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1400,6 +1400,9 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 
 LaTeX Warning: Label `fig:schemaIsing' multiply defined.
 
+
+LaTeX Warning: Label `fig:schemaIsing' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -1521,22 +1524,22 @@ Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count285
  ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 27.
- (/Users/facchinettigaetan/Documents/Etudes/Master 2 AMS (Paris-Saclay)/Stage/Soutenance/.texpadtmp/main.nav) <imagesdiapo/Logo_LPTMC.png, id=70, 180.675pt x 180.675pt>
+ (/Users/facchinettigaetan/Documents/Etudes/Master 2 AMS (Paris-Saclay)/Stage/Soutenance/.texpadtmp/main.nav) <imagesdiapo/Logo_LPTMC.png, id=66, 180.675pt x 180.675pt>
 File: imagesdiapo/Logo_LPTMC.png Graphic file (type png)
  <use imagesdiapo/Logo_LPTMC.png>
 Package pdftex.def Info: imagesdiapo/Logo_LPTMC.png used on input line 31.
 (pdftex.def)             Requested size: 54.20291pt x 54.20291pt.
- <imagesdiapo/Logo_ENSC.jpg, id=71, 1204.5pt x 521.95pt>
+ <imagesdiapo/Logo_ENSC.jpg, id=67, 1204.5pt x 521.95pt>
 File: imagesdiapo/Logo_ENSC.jpg Graphic file (type jpg)
  <use imagesdiapo/Logo_ENSC.jpg>
 Package pdftex.def Info: imagesdiapo/Logo_ENSC.jpg used on input line 31.
 (pdftex.def)             Requested size: 78.29524pt x 33.92793pt.
- <imagesdiapo/Logo_ENSTA.jpg, id=72, 1202.12492pt x 1202.12492pt>
+ <imagesdiapo/Logo_ENSTA.jpg, id=68, 1202.12492pt x 1202.12492pt>
 File: imagesdiapo/Logo_ENSTA.jpg Graphic file (type jpg)
  <use imagesdiapo/Logo_ENSTA.jpg>
 Package pdftex.def Info: imagesdiapo/Logo_ENSTA.jpg used on input line 31.
 (pdftex.def)             Requested size: 36.06218pt x 36.06218pt.
- <imagesdiapo/parisSaclay.jpg, id=73, 503.481pt x 170.3163pt>
+ <imagesdiapo/parisSaclay.jpg, id=69, 503.481pt x 170.3163pt>
 File: imagesdiapo/parisSaclay.jpg Graphic file (type jpg)
  <use imagesdiapo/parisSaclay.jpg>
 Package pdftex.def Info: imagesdiapo/parisSaclay.jpg used on input line 31.
@@ -1564,7 +1567,7 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 92.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Try loading font information for U+stmry on input line 92.
- (/usr/local/texlive/2016/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) <imagesdiapo/Ising2D.pdf, id=130, 389.21098pt x 198.43896pt>
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) <imagesdiapo/Ising2D.pdf, id=124, 389.21098pt x 198.43896pt>
 File: imagesdiapo/Ising2D.pdf Graphic file (type pdf)
  <use imagesdiapo/Ising2D.pdf>
 Package pdftex.def Info: imagesdiapo/Ising2D.pdf used on input line 92.
@@ -1574,7 +1577,7 @@ Overfull \vbox (24.49577pt too high) has occurred while \output is active []
 
  [3
 
- <./imagesdiapo/Ising2D.pdf>] <imagesdiapo/aimantation.pdf, id=163, 244.915pt x 126.4725pt>
+ <./imagesdiapo/Ising2D.pdf>] <imagesdiapo/aimantation.pdf, id=157, 244.915pt x 126.4725pt>
 File: imagesdiapo/aimantation.pdf Graphic file (type pdf)
  <use imagesdiapo/aimantation.pdf>
 Package pdftex.def Info: imagesdiapo/aimantation.pdf used on input line 136.
@@ -1693,15 +1696,20 @@ Overfull \vbox (24.49577pt too high) has occurred while \output is active []
 ]
 
 LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
-(Font)              using `U/stmry/m/n' instead on input line 448.
+(Font)              using `U/stmry/m/n' instead on input line 446.
 
 
-Overfull \hbox (13.13696pt too wide) in paragraph at lines 448--448
+Overfull \hbox (8.80365pt too wide) in paragraph at lines 446--446
 [] 
  []
 
 
-Overfull \hbox (8.5927pt too wide) in paragraph at lines 448--448
+Underfull \hbox (badness 10000) in paragraph at lines 446--446
+
+ []
+
+
+Overfull \hbox (8.5927pt too wide) in paragraph at lines 446--446
 [][]
  []
 
@@ -1715,12 +1723,21 @@ Overfull \vbox (24.49577pt too high) has occurred while \output is active []
 
  [20
 
-]
+] <imagesdiapo/DerRegIsing.pdf, id=309, 244.915pt x 99.37125pt>
+File: imagesdiapo/DerRegIsing.pdf Graphic file (type pdf)
+ <use imagesdiapo/DerRegIsing.pdf>
+Package pdftex.def Info: imagesdiapo/DerRegIsing.pdf used on input line 513.
+(pdftex.def)             Requested size: 220.42145pt x 89.43329pt.
+pdfTeX warning (ext4): destination with the same identifier (name{fig:schemaIsing}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.513 		\end{frame}
+                   
 Overfull \vbox (24.49577pt too high) has occurred while \output is active []
 
  [21
 
-] (/Users/facchinettigaetan/Documents/Etudes/Master 2 AMS (Paris-Saclay)/Stage/Soutenance/.texpadtmp/main.toc) [22
+ <./imagesdiapo/DerRegIsing.pdf>] (/Users/facchinettigaetan/Documents/Etudes/Master 2 AMS (Paris-Saclay)/Stage/Soutenance/.texpadtmp/main.toc) [22
 
 ]
 Overfull \vbox (24.49577pt too high) has occurred while \output is active []
@@ -1737,29 +1754,24 @@ Overfull \vbox (24.49577pt too high) has occurred while \output is active []
 
  [25
 
-]
-Overfull \vbox (24.49577pt too high) has occurred while \output is active []
+] (/Users/facchinettigaetan/Documents/Etudes/Master 2 AMS (Paris-Saclay)/Stage/Soutenance/.texpadtmp/main.toc) [26
 
- [26
-
-] (/Users/facchinettigaetan/Documents/Etudes/Master 2 AMS (Paris-Saclay)/Stage/Soutenance/.texpadtmp/main.toc) [27
-
-] <imagesdiapo/MesuRes.pdf, id=387, 244.915pt x 154.5775pt>
+] <imagesdiapo/MesuRes.pdf, id=378, 244.915pt x 154.5775pt>
 File: imagesdiapo/MesuRes.pdf Graphic file (type pdf)
  <use imagesdiapo/MesuRes.pdf>
-Package pdftex.def Info: imagesdiapo/MesuRes.pdf used on input line 606.
+Package pdftex.def Info: imagesdiapo/MesuRes.pdf used on input line 623.
 (pdftex.def)             Requested size: 171.43932pt x 108.20349pt.
 
 Overfull \vbox (21.21822pt too high) has occurred while \output is active []
 
- [28
+ [27
 
- <./imagesdiapo/MesuRes.pdf>] (/Users/facchinettigaetan/Documents/Etudes/Master 2 AMS (Paris-Saclay)/Stage/Soutenance/.texpadtmp/main.toc) [29
+ <./imagesdiapo/MesuRes.pdf>] (/Users/facchinettigaetan/Documents/Etudes/Master 2 AMS (Paris-Saclay)/Stage/Soutenance/.texpadtmp/main.toc) [28
 
 ]
 Overfull \vbox (19.49643pt too high) has occurred while \output is active []
 
- [30
+ [29
 
 ]
 \tf@nav=\write6
@@ -1771,11 +1783,11 @@ Overfull \vbox (19.49643pt too high) has occurred while \output is active []
 \tf@snm=\write8
 \openout8 = `main.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 637.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 637.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 654.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 654.
  (/Users/facchinettigaetan/Documents/Etudes/Master 2 AMS (Paris-Saclay)/Stage/Soutenance/.texpadtmp/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 637.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 637.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 654.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 654.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 5849F11DD068CE8848FC3B1988E6E454;244.
 
@@ -1789,22 +1801,22 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 637.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 654.
  ) 
 Here is how much of TeX's memory you used:
- 30453 strings out of 493014
- 570553 string characters out of 6133352
- 721170 words of memory out of 5000000
- 33284 multiletter control sequences out of 15000+600000
+ 30450 strings out of 493014
+ 570612 string characters out of 6133352
+ 721193 words of memory out of 5000000
+ 33283 multiletter control sequences out of 15000+600000
  33191 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,23n,55p,10442b,640s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/rsfs/rsfs5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbi0800.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2016/texmf-d
-ist/fonts/type1/public/cm-super/sfcc0800.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx0800.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx0900.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb>
-Output written on "/Users/facchinettigaetan/Documents/Etudes/Master 2 AMS (Paris-Saclay)/Stage/Soutenance/.texpadtmp/main.pdf" (30 pages, 1050912 bytes).
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/rsfs/rsfs5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbi0800.pfb></usr/local/texlive/2016/texmf-di
+st/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfcc0800.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx0800.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx0900.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb>
+Output written on "/Users/facchinettigaetan/Documents/Etudes/Master 2 AMS (Paris-Saclay)/Stage/Soutenance/.texpadtmp/main.pdf" (29 pages, 1217103 bytes).
 PDF statistics:
- 552 PDF objects out of 1000 (max. 8388607)
- 460 compressed objects within 5 object streams
- 80 named destinations out of 1000 (max. 500000)
- 195 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 547 PDF objects out of 1000 (max. 8388607)
+ 453 compressed objects within 5 object streams
+ 77 named destinations out of 1000 (max. 500000)
+ 192 words of extra memory for PDF output out of 10000 (max. 10000000)
 

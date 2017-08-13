@@ -11,6 +11,5 @@
 \beamer@sectionintoc {3}{Etude du mod\IeC {\`e}le d'Ising 2D : M\IeC {\'e}thodes num\IeC {\'e}riques}{22}{0}{3}
 \beamer@subsectionintoc {3}{1}{M\IeC {\'e}thode g\IeC {\'e}n\IeC {\'e}rale}{22}{0}{3}
 \beamer@subsectionintoc {3}{2}{Int\IeC {\'e}rpolation de Tchebytchev}{24}{0}{3}
-\beamer@subsectionintoc {3}{3}{Calcul des int\IeC {\'e}grales}{26}{0}{3}
-\beamer@sectionintoc {4}{Etude du mod\IeC {\`e}le d'Ising 2D : R\IeC {\'e}sultats}{27}{0}{4}
-\beamer@sectionintoc {5}{Conclusions}{29}{0}{5}
+\beamer@sectionintoc {4}{Etude du mod\IeC {\`e}le d'Ising 2D : R\IeC {\'e}sultats}{26}{0}{4}
+\beamer@sectionintoc {5}{Conclusions}{28}{0}{5}

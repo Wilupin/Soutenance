@@ -393,18 +393,11 @@ avec l'hamiltonien $\Hc_\mu$ définit par
 
 avec $\mu > 1$, un réel, $\lambda_\mu$ une fonction $\Cc^\infty$ et la notation
 \begin{equation*}
-\int_\qv ... \, \equiv \, \int_{-\pi}^{\pi}	\int_{-\pi}^{\pi}	... \, \dd \, q_x \dd \, q_y
+\int_\qv ... \, \equiv \, \int_{-\pi}^{\pi}	\int_{-\pi}^{\pi}	... \, \dd \, q_x \dd \, q_y \, .
 \end{equation*}
+$\bullet$ Avec cette notation $\Hc_\mu$ dépend de la température $T$.
 }
 
-\commentout{
-Nous avons aussi introduit les fonctions
-\begin{equation*}
-\begin{split}
-	\gamma(\qv ) & = \frac{1}{2} \(\cos(q_x) + \cos(q_y)\) \\
-	 \lambda_\mu(\qv) & = 2\beta\(2J \gamma(\qv) + \mu\) \, .
-	 \end{split}
-\end{equation*}}
 	
 	\end{frame}
 	
@@ -429,7 +422,7 @@ $\bullet$ L'équation de flot BMW à résoudre (pour la symétrie $\mathbb{Z}_2$
 \end{minipage}}
 \vspace*{11pt}
 \begin{minipage}[b]{300pt}
-\textit{Avec les notations, $\partial_t ... = k \partial_k ...$ et }
+\textit{Avec les notations $t = \ln(k/\Lambda)$ donnant $\partial_t ... = k \partial_k ...$ et }
 \begin{equation*}
 \begin{split}
 	J_n(\pv,\phi) = \int_\qv \partial_t \Rc_k(\qv) \,G_k(\pv+\qv, \phi) \,G_k^{n-1}(\qv, \phi) \, , \quad I_n(\pv)  = J_n(\pv = 0,\phi).
@@ -439,11 +432,16 @@ $\bullet$ L'équation de flot BMW à résoudre (pour la symétrie $\mathbb{Z}_2$
 \begin{equation*}
 \begin{split}
 \textit{(propagateur)} & \quad G_k(\qv, \phi) = \frac{1}{\Gamma_k^{(2)}(\qv,\phiv)+ \Rc_k(\qv)} \\
-\textit{(régulateur)} & \quad  \Rc_k(\qv) \in \Cc^{\infty}(\R^{d+1}) \quad \text{tq.} \quad \lim_{\|\qv\|_2 \to \infty} \partial_t^m \Rc_k(\qv,\phi) = 0 \quad	\forall m \in \N^*
+\textit{(régulateur)} & \quad  \Rc_k(\qv) \in \Cc^{\infty}(\R^{d+1}) \quad \text{tq.} \quad \lim_{\|\qv\|_2 \to \infty} \partial_t^m \Rc_k(\qv,\phi) = 0 \quad	\forall m \in \N
 \end{split}
 \end{equation*}
 $\bullet$ Condition initiale : en $k = \Lambda$, dépend de $\Hc_\mu$. \\
-$\bullet$ Objectif : Calculer $\Gamma_k^{(2)}$ en $k \to 0$.
+$\bullet$ Détermination de $T_c$\\
+\indent
+$\quad \diamond$ Utilisation d'une version adimensionné de l'équation. \\
+\indent
+$\quad \diamond$ Calculer $\Gamma_k^{(2)}$ en $k \to 0$. \\
+
 \end{minipage}
 	\end{frame}
     
@@ -459,15 +457,10 @@ $\bullet$ Objectif : Calculer $\Gamma_k^{(2)}$ en $k \to 0$.
 	\begin{frame}
 	\justifying
 	\vspace*{22pt}
-
-	$\bullet$ Résolution des équations BMW en trois étapes : \\
-	$\quad \diamond$ Intérêt des trois étapes  : précision du calcul \\
-	$\quad \diamond$ Mise en pratique : 3 systèmes à résoudre à la suite\\
-	\vspace*{11pt}
 	
-	$\bullet$ Première étape : \\
+	$\bullet$ Système d'équation à résoudre : \\
 	\vspace*{11pt}
-	{\itshape Trouver $(\Delta_k$, $X_k)$, solution de $(\Ec_1)$, i.e tels que pour tout $p_x \in [-\pi, \pi]$, $p_y \in [-\pi, \pi]$, $\phi \in \R$, $k\in [k_a, \Lambda]$}
+	{\itshape Trouver $(\Delta_k$, $X_k)$, solution de $(\Ec_1)$, i.e tels que pour tout $p_x \in [-\pi, \pi]$, $p_y \in [-\pi, \pi]$, $\phi \in \R$, $k\in [0, \Lambda]$}
 	\begin{align*}
 	\partial_t  \Delta_k (p_x, p_y, \phi) & = 
 	\begin{aligned}[t]
@@ -493,10 +486,28 @@ $\bullet$ Objectif : Calculer $\Gamma_k^{(2)}$ en $k \to 0$.
 	\justifying
 	\vspace*{22pt}
 	
-	$\bullet$ Problème :
-	\begin{equation}
-		\partial_t \Rc_k	
-	\end{equation}
+	$\bullet$ Mais problème :
+	
+	\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 0.9]{DerRegIsing.pdf}
+\caption{Evolution de $(q_x, q_y) \to \partial_t \Rc_k(q_x, q_y)$}
+	\label{fig:schemaIsing}
+	\end{center}
+\end{figure}
+\vspace*{-5pt}
+\begin{equation*}
+	I_n, \, J_n \propto \int_{-\pi}^{\pi}\int_{-\pi}^{\pi} \partial_t \Rc_k(q_x, q_y) \times ... \dd q_x \dd q_y
+\end{equation*}
+
+$\bullet$ Changement de système d'équation (pour $k<k_a$) :\\
+$\quad$ Utilisation des variables $\tpv = \pv/k = (p_x/k, p_y/k)$ \\
+\vspace*{8pt}
+	
+	
+	$\bullet$ Changement de système d'équation (pour $k<k_b< k_a$) :\\
+$\quad$ Passage à un système d'équations totalement adimensionné. \\
+$\quad$ Recherche d'une solution particulière dite "de point fixe".
 
 	
 		\end{frame}
@@ -512,9 +523,22 @@ $\bullet$ Objectif : Calculer $\Gamma_k^{(2)}$ en $k \to 0$.
 
 	$\bullet$ Discrétisation en temps : schéma d'Euler explicite.\\
 	$\bullet$ Discrétisation en champ : grille fixe. Dérivée avec schéma à 5 points. \\
-	$\bullet$ Discrétisation en moment : méthode pseudo-spectrale \\
-	$\bullet$ Calcul des intégrales : quadrature de Gauss-Legendre \\
 	\vspace*{11pt}
+	$\bullet$ Calcul des intégrales : quadrature de Gauss-Legendre \\
+	$\quad \diamond$ On cherche à calculer : 
+	
+	\begin{equation*}
+		K = \int_{-a}^{a} \int_{-a}^{a} f(q_x, q_y) \dd q_x \, \dd q_y 
+	\end{equation*}
+	$\quad \diamond$ Utilisation de $\{\xi\}_i$ points d'intégrations de Gauss-Legendre sur $[-1,1]$ et $\{w_i\}_i$ les poids associés :
+	\begin{equation*}
+		K \simeq a^2 \sum_{i=1}^{n_{gl}} \sum_{j=1}^{n_{gl}} w_i w_j f(a\xi_i, a\xi_j) 
+	\end{equation*}
+	$\quad \diamond$ Utilisation des symétries des fonctions pour réduire les calculs.
+	
+	\vspace*{11pt}
+	
+	
 	
 	\end{frame}
 	
@@ -524,7 +548,7 @@ $\bullet$ Objectif : Calculer $\Gamma_k^{(2)}$ en $k \to 0$.
 	\justifying
 	\vspace*{22pt}
 	
-	$\quad \diamond$ Interpolation de Tchebytechev en deux dimensions : \\
+	$\bullet$ Interpolation de Tchebytechev en deux dimensions : \\
 	
 	\vspace*{11pt}
 	
@@ -567,14 +591,7 @@ f(x,y) \simeq \sum_{j=1}^Q d_jc^j(y)r^j(x)
 	
 	\end{frame}
 	
-	\subsection{Calcul des intégrales}
-		\begin{frame}
-	\justifying
-	\vspace*{22pt}
-	
-	$\quad \diamond$ Calcul des intégrales : quadrature de Gauss-Legendre
-	$\quad \diamond$ Utilisation des symétries
-		\end{frame}
+
 		
 		\section{Etude du modèle d'Ising 2D : Résultats}
 		\sommaire{}
@@ -614,7 +631,7 @@ $\bullet $ Comparaison à la température théorique attendue
 	\justifying
 	\vspace*{22pt}
 	
-	$\bullet$ Une première étude sans grandes avancées. \\
+	$\bullet$ Première étude : \\
 	\vspace*{5pt}
 		$\quad \diamond$ Réorganisation du code \\
 		$\quad \diamond$ Réécriture de la méthode de quadrature \\
@@ -622,7 +639,7 @@ $\bullet $ Comparaison à la température théorique attendue
 	
 	\vspace*{15pt}
 	
-	$\bullet$ Une seconde étude inachevée mais avec des résultats\\
+	$\bullet$ Seconde étude (Ising 2D) : \\
 		\vspace*{5pt}
 	$\quad \diamond$ Mise en place de différentes techniques numériques\\
 	$\quad \diamond$ Tentative de résolution de problèmes de temps de calculs\\

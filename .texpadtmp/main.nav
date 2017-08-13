@@ -44,25 +44,22 @@
 \headcommand {\beamer@subsectionentry {0}{3}{2}{24}{Int\IeC {\'e}rpolation de Tchebytchev}}\headcommand {\beamer@subsectionpages {22}{23}}
 \headcommand {\slideentry {3}{2}{1}{24/25}{Int\IeC {\'e}rpolation de Tchebytchev}{0}}
 \headcommand {\beamer@framepages {24}{25}}
-\headcommand {\beamer@subsectionentry {0}{3}{3}{26}{Calcul des int\IeC {\'e}grales}}\headcommand {\beamer@subsectionpages {24}{25}}
-\headcommand {\slideentry {3}{3}{1}{26/26}{Calcul des int\IeC {\'e}grales}{0}}
+\headcommand {\sectionentry {4}{Etude du mod\IeC {\`e}le d'Ising 2D : R\IeC {\'e}sultats}{26}{Etude du mod\IeC {\`e}le d'Ising 2D : R\IeC {\'e}sultats}{0}}
+\headcommand {\beamer@sectionpages {22}{25}}
+\headcommand {\beamer@subsectionpages {24}{25}}
+\headcommand {\slideentry {4}{0}{1}{26/26}{}{0}}
 \headcommand {\beamer@framepages {26}{26}}
-\headcommand {\sectionentry {4}{Etude du mod\IeC {\`e}le d'Ising 2D : R\IeC {\'e}sultats}{27}{Etude du mod\IeC {\`e}le d'Ising 2D : R\IeC {\'e}sultats}{0}}
-\headcommand {\beamer@sectionpages {22}{26}}
-\headcommand {\beamer@subsectionpages {26}{26}}
-\headcommand {\slideentry {4}{0}{1}{27/27}{}{0}}
+\headcommand {\slideentry {4}{0}{2}{27/27}{}{0}}
 \headcommand {\beamer@framepages {27}{27}}
-\headcommand {\slideentry {4}{0}{2}{28/28}{}{0}}
+\headcommand {\sectionentry {5}{Conclusions}{28}{Conclusions}{0}}
+\headcommand {\beamer@sectionpages {26}{27}}
+\headcommand {\beamer@subsectionpages {26}{27}}
+\headcommand {\slideentry {5}{0}{1}{28/28}{}{0}}
 \headcommand {\beamer@framepages {28}{28}}
-\headcommand {\sectionentry {5}{Conclusions}{29}{Conclusions}{0}}
-\headcommand {\beamer@sectionpages {27}{28}}
-\headcommand {\beamer@subsectionpages {27}{28}}
-\headcommand {\slideentry {5}{0}{1}{29/29}{}{0}}
+\headcommand {\slideentry {5}{0}{2}{29/29}{}{0}}
 \headcommand {\beamer@framepages {29}{29}}
-\headcommand {\slideentry {5}{0}{2}{30/30}{}{0}}
-\headcommand {\beamer@framepages {30}{30}}
-\headcommand {\beamer@partpages {1}{30}}
-\headcommand {\beamer@subsectionpages {29}{30}}
-\headcommand {\beamer@sectionpages {29}{30}}
-\headcommand {\beamer@documentpages {30}}
-\headcommand {\def \inserttotalframenumber {19}}
+\headcommand {\beamer@partpages {1}{29}}
+\headcommand {\beamer@subsectionpages {28}{29}}
+\headcommand {\beamer@sectionpages {28}{29}}
+\headcommand {\beamer@documentpages {29}}
+\headcommand {\def \inserttotalframenumber {18}}
