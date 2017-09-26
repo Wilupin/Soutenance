@@ -73,19 +73,19 @@ $\bullet$ Spin et configuration :
 
 
 $\bullet$ Energie d'une config. $\Mr$ : $ \Hc(\Mr,b)$ \\
-\commentout{\begin{equation*}
-  \Hc(\Mr) = \sum_{\left< \rv, \rv' \right>} S_\rv S_{\rv'} - \sum_\rv b_\rv S_\rv	
-\end{equation*}}
+\begin{equation*}
+  \Hc(\Mr,b) = \sum_{\left< \rv, \rv' \right>} S_\rv S_{\rv'} - \sum_\rv b_\rv S_\rv	
+\end{equation*}
 
 \vspace*{11pt}
 $\bullet$ Probabilité d'une config. $\Mr$ :
 \begin{equation*}
 p(\Mr,b, T) = \frac{1}{\Zc(b,T)} \exp\(-\frac{\Hc(\Mr,b)}{k_BT}\)
 \end{equation*}
-$\bullet$ Fonction de partition :
+\commentout{$\bullet$ Fonction de partition :
 \begin{equation*}
 \Zc(b,T) = \sum_\Mr \exp\(-\frac{\Hc(\Mr,b)}{k_BT}\)
-\end{equation*}
+\end{equation*}}
 \vfill
 
 	\end{multicols}
@@ -94,45 +94,31 @@ $\bullet$ Fonction de partition :
 \begin{frame}
 		\justifying
 		\vspace*{22pt}
-	$\bullet$	Définition de l'aimantation :  
-		\begin{equation*}
-			m(T,b) = \sum_{\Mr = \{S_\rv\}_\rv }  \left\{p(\Mr,b,T) \( \frac{1}{N_s} \sum_\rv S_\rv\) \right\}  \propto \partial_T \ln\(\Zc \) 
-		\end{equation*}
+			$\bullet$ Définition de l'aimantation : $ \displaystyle m(T,b) = \left< \frac{1}{N_s} \sum_\rv S_\rv \right> $
 		
-	\onslide<2->{	
 		\vspace*{11pt}
-		$\bullet$ Evolution de l'aimantation $m(T,b=0)$ avec la température $T$ :
-		
-\begin{multicols}{2}
-
-
-	\begin{figure}[H]
-\begin{center}
-\includegraphics[width =0.95\columnwidth]{aimantation.pdf}
-\caption{Aimantation $m$ vs $T$ à $b \sim 0$}
-	\label{fig:schemaIsing}
+		$\bullet$ Evolution de $m$ avec la température $T$ : \textbf{transition de phase}
+					
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale =0.25]{Transition.pdf}
 	\end{center}
 \end{figure}
+
+
+
+
+
+	$\bullet$ Fonction de corrélation à deux points :
 	
-	\vspace*{-11pt}
-	Invariance par échange de $\ev_z$ en $-\ev_z$ :\\
-	$\Hc(\Mr,b=0) = \Hc(-\Mr,b=0)$ \\
-	$\quad \diamond$ symétrie $\mathbb{Z}_2$ \\
-	$\quad \diamond$  $m(b = 0, T=0)=0$. \\
-	\vspace*{8pt}}
-	\onslide<3->{
-	Mais problème : 
 	\begin{equation*}
-		\lim_{N_s \to \infty} \(\lim_{b \to 0} m \) = 0 \neq \lim_{b \to 0} \( \lim_{N_s \to \infty} m \)
+		G^{(2)}(\rv, \rv') = G^{(2)}(\rv - \rv') = \left< S_\rv S_{\rv'} \right> \quad \text{et} \quad \Gamma^{(2)}(\rv - \rv') \simeq \frac{1}{G^{(2)}(\rv - \rv')}
 	\end{equation*}
 	
-	\end{multicols}
-	}
-	\onslide<4->{
-	\begin{center}
-$\Rightarrow$ {\Large Brisure de symétrie \& Transition de phase }
-\end{center}
-		}
+%\begin{center}
+%$\Rightarrow$ {\Large Transition de phase }
+%\end{center}
+		
 \end{frame}
     
 
@@ -239,31 +225,22 @@ $ \bullet $ $\|\pv \|_2 \in [0, \Lambda]$
    	
    	\vspace*{11pt}
     \onslide<2->{
-    $\rightarrow$ Méthode : calcul de la fonction de partition $\Zc$\\
-    $\rightarrow$ Utilisation du NPRG\\
-    $\rightarrow$ Utilisation de l'approximation BMW \\
-    $\rightarrow$ Benchmarking de l'approximation BMW \\}
-    \vspace*{11pt}
+    % $\bullet$ Méthode : calcul de la fonction de partition $\Zc$\\
     
-
-\commentout{
-    \onslide<3->{
-    $\bullet$ Première étude :\\
-    \begin{itemize}
-    \item Réecriture en C++ d'un code de calcul des exposants critiques
-    \item Recherche des problèmes et tentatives de résolution
-    \end{itemize}
-    }
-    }
-    \vspace*{11pt}
+    $\bullet$ Contexte : \\
+    Calcul de $T_c$ très complexe : pas de méthode générale.\\
+ 
     
-    \onslide<3->{
-    $\bullet$ Deuxième étude :\\
-    \begin{itemize}
-    \item Ecriture d'un nouveau code pour calculer $T_c$.
-    \item Comparaison à la valeur théorique : benchmarking de la méthode
-    \end{itemize}
-    }
+    Méthode du Groupe de Renormalisation Non Perturbatif (NPRG)\\
+	Résolution par approximation BMW (Blaizot - Méndez-Galain - Wschebor) \\
+	Des codes existants mettent déjà en oeuvre cette résolution \\
+	
+	\vspace*{11pt}
+	
+	$\bullet$ Objectif : \\
+	Calculer de $T_c$ avec la méthode NPRG et l'approximation BMW \\
+    Benchmarking de l'approximation BMW \\}
+    \vspace*{11pt}
     
     \end{frame}
 
@@ -369,10 +346,13 @@ K = S_{d-1} \int_0^{+\infty} \dd\tq_2 \, \tq_2^{d-2} \int_{-\infty}^{+\infty} \d
 	
 	\section{Etude du modèle d'Ising 2D : Mise en équation}
     	
-    	\subsection{Calcul de la fonction de partition}
+    %	\subsection{Calcul de la fonction de partition}
     	
     	\sommaire{}
    	
+   	
+   	
+   	\commentout{
 	   \begin{frame}
 	\justifying
 	\vspace*{22pt}
@@ -418,14 +398,32 @@ $\bullet$ Avec cette notation $\Hc$ dépend de la température $T$.
 	
 	\end{frame}
 	
+	}
 	
-	
-	\subsection{Le NPRG et les équations BMW}
+	\subsection{Le groupe de renormalisation non perturbatif (NPRG)}
+
 
 	\begin{frame}
 		\justifying
 		\vspace*{22pt}
-$\bullet$ L'équation de flot BMW à résoudre : \\
+		
+		$\bullet$ Le principe du NPRG : 
+		
+	\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale = 0.35]{SchemaRG2.pdf}
+	\label{fig:schemaIsing}
+	\end{center}
+	\end{figure}
+  \end{frame}
+
+
+\subsection{L'équation de l'approximation BMW}
+
+	\begin{frame}
+		\justifying
+		\vspace*{22pt}
+$\bullet$ L'équation de  BMW à résoudre : \\
 
 \sepfbox{
 \begin{minipage}{300pt}
@@ -447,7 +445,7 @@ G(t,\qv, \phi) & = \frac{1}{\Gamma^{(2)}(t,\qv,\phiv)+ \Rc(t,\qv)} \quad \quad \
 \Rc(t,\qv) & \in \Cc^{\infty}(\R^{3}) \qquad \qquad \qquad \qquad \quad \textit{(régulateur)} 
 \end{split}
 \end{equation*}
-$\bullet$ Condition initiale : en $t = 0$, dépend de $\Hc$ et donc de $T$. \\
+$\bullet$ Condition initiale : en $t = 0$, dépend de la température $T$. \\
 $\bullet$ Détermination de $T_c$ : calcul de $\Gamma^{(2)}$ en $t \to -\infty$
 
 \commentout{
@@ -465,40 +463,14 @@ $\quad \diamond$. \\}
 	
 	
 	
-	\subsection{La résolution en trois étapes}
 
 
-\commentout{
-	
-	\begin{frame}
-	\justifying
-	\vspace*{22pt}
-	
-	$\bullet$ Système d'équation à résoudre : \\
-	\vspace*{11pt}
-	{\itshape Trouver $(\Delta$, $X)$, tels que pour tout $(p_x, p_y) \in [-\pi, \pi]^2$, $\phi \in \R$, $t \in ]-\infty, 0]$}
-	\begin{align*}
-	\partial_t  \Delta (t,p_x, p_y, \phi) & = 
-	\begin{aligned}[t]
-	&  J_3(t,p_x, p_y, \phi) \partial_{\phi} \left\{ \Delta (t, p_x, p_y, \phi) + X(t,\phi) \right\} \\
-	&  - \frac{1}{2} I_2(t,\phi) \partial_{\phi}^2 \Delta(t,p_x, p_y, \phi) - I_3(t,\phi){(\partial_{\phi} X(t,\phi))}^2 \quad \quad (\Ec_1)
-	\end{aligned}
-	\label{eqn} \\
-	\partial_t X(t,\phi) & = 
-	\begin{aligned}[t]
-		& \frac{1}{2} \partial_{\phi}^2 I_1(t,\phi) \, ,
-	\end{aligned}
-\end{align*}
-\textit{avec la condition intiale}
-	\begin{equation*}
-	\Delta(0,p_x, p_y, \phi) = 0 \quad \text{et} \quad X(0,\phi) =  \delta^2 \frac{1}{1+\tilde{\mu}} - \frac{2\delta^2\tilde{\beta} }{\cosh^2\(\delta\sqrt{2\tilde{\beta}}\phi\)}
-\end{equation*}
+
 	
 	
-	\end{frame}
-	}
+	\commentout{
 	
-	
+		\subsection{La résolution en trois étapes}
 	\begin{frame}
 	\justifying
 	\vspace*{22pt}
@@ -523,11 +495,13 @@ $\quad$ Utilisation des variables $\tqv = e^{-t}\qv = (e^{-t}q_x, e^{-t}q_y)$ \\
 	
 	
 	$\bullet$ Changement de système d'équation (pour $t<t_b< t_a$) :\\
-$\quad$ Passage à un système d'équations totalement adimensionné. \\
-$\quad$ Recherche d'une solution particulière dite "de point fixe".
+	$\quad$ Passage à un système d'équations totalement adimensionné. \\
+	$\quad$ Recherche d'une solution particulière dite "de point fixe".
 
 	
 		\end{frame}
+		
+		}
 	
 	\section{Etude du modèle d'Ising 2D : Méthodes numériques}
 	\subsection{Discrétisation en temps et en champs}
@@ -538,10 +512,10 @@ $\quad$ Recherche d'une solution particulière dite "de point fixe".
 	\justifying
 	\vspace*{22pt}
 	
-	Objectif : discrétiser et faire des calculs sur des fonctions
+	Objectif : discrétiser et faire des calculs sur la fonction
 	\vspace*{-5pt}
 	\begin{center} 
-	$(t, q_x, q_y, \phi) \to f(t,q_x, q_y, \phi)$	
+	$(t, q_x, q_y, \phi) \to \Gamma^{(2)}(t,q_x, q_y, \phi)$	
 	\end{center}
 
 	
@@ -549,13 +523,13 @@ $\quad$ Recherche d'une solution particulière dite "de point fixe".
 
 	$\bullet$ Discrétisation en temps $t$ : \\
 	$\quad \diamond$ Grille de points $\{t_n\}_n$ régulièrement espacés.\\
-	$\quad \diamond$  Schéma d'Euler explicite : $\partial_t f(t, ...) = \(f(t_n, ...)- f(t_{n-1}, ...)\)/\delta t$ \\
+	$\quad \diamond$  Schéma d'Euler explicite : $\partial_t \Gamma^{(2)}(t, ...) = \(\Gamma^{(2)}(t_n, ...)- \Gamma^{(2)}(t_{n-1}, ...)\)/\delta t$ \\
 	
 	\vspace*{11pt}
 	
 	$\bullet$ Discrétisation en champ $\phi$: \\
 	$\quad \diamond$ Grille de points $\{\phi_n\}_n$ régulièrement espacés. \\
-	$\quad \diamond$ Calcul des dérivées $\partial_\phi f(..., \phi)$ avec des schémas à 5 points. \\
+	$\quad \diamond$ Calcul des dérivées $\partial_\phi \Gamma^{(2)}(..., \phi)$ avec des schémas à 5 points. \\
 	
 	\vspace*{11pt}
 	\begin{figure}[H]
@@ -576,28 +550,67 @@ $\quad$ Recherche d'une solution particulière dite "de point fixe".
 	\justifying
 	\vspace*{22pt}
 	
-	$\bullet$ Calcul des intégrales : quadrature de Gauss-Legendre \\
-	$\quad \diamond$ On cherche à calculer : 
+	$\bullet$ Calcul des intégrales : 
+	{\footnotesize
+	\begin{equation*}
+	\begin{split}
+		J_3(t, p_x, p_y,\phi)  = \int_{[-\pi,\pi]^{2}}  \frac{\partial_t \Rc(t, q_x, q_y)}{\Gamma^{(2)}(t, p_x + q_x, p_y + q_y, \phi) + \Rc(t, q_x, q_y)}\, \\ \times {\left\{ \frac{1}{\Gamma^{(2)}(t, q_x, q_y, \phi) + \Rc(t,q_x,q_y)} \right\}}^{2}  \dd q_x \dd q_y 
+		\end{split}
+	\end{equation*}
 	
 	\begin{equation*}
-		K(t,\phi) = \int_{-a}^{a} \int_{-a}^{a} f(t, q_x, q_y,\phi) \dd q_x \, \dd q_y 
-	\end{equation*}
-	$\quad \diamond$ Utilisation de $\{\xi_i\}_i$ points d'intégrations de Gauss-Legendre (zéros du polynômes de Legendre d'ordre $n_{gl}$) sur $[-1,1]$ et $\{w_i\}_i$ les poids associés :
-	\begin{equation*}
-		K(t, \phi) \simeq a^2 \sum_{i=1}^{n_{gl}} \sum_{j=1}^{n_{gl}} w_i w_j f(t,a\xi_i, a\xi_j,\phi) 
-	\end{equation*}
-	$\quad \diamond$ Utilisation des symétries des fonctions pour réduire les calculs.
-	
-	\vspace*{11pt}
-	$\bullet$ Problème : le calcul de $J_n(t,p_x, p_y,\phi)$ = $\int g(t,p_x+q_x, p_y+q_y, \phi)$\\
-		$\quad \diamond$ On ne connait $g$ qu'au point de discrétisation des fonctions inconnues.\\
-		$\quad \diamond$ Si $q_x = a\xi_i$ et $p_x = a\xi_j$, générallement $p_x+q_x \neq a\xi_m$ $\forall m \in \bbrac{1, n_{gl}}$
-	
+		I_2(t,\phi)  = \int_{[-\pi,\pi]^{2}} \partial_t \Rc(t, q_x, q_y) \, {\left\{ \frac{1}{\Gamma^{(2)}(t, q_x, q_y, \phi) + \Rc(t, q_x, q_y)} \right\}}^{2}  \dd q_x \dd q_y 
+	\end{equation*}}
 
+$\bullet$ Premier problème :
+
+	\begin{figure}[H]
+\begin{center}
+\includegraphics[scale = 0.8]{DerRegIsing.pdf}
+\caption{Représentation de $\partial_t \Rc(t_1, q_x, q_y)$, $\partial_t \Rc(t_2, q_x, q_y)$, avec $t_2 < t_1$}
+	\label{fig:schemaIsing}
+	\end{center}
+\end{figure}
+\vspace*{-11pt}
+La solution : Utiliser des variables $(\tq_x, \tq_y) = (e^{-t}q_x, e^{-t}q_y)$.
+	
+	%\begin{equation*}
+	%	K(t,\phi) = \int_{-a}^{a} \int_{-a}^{a} f(t, q_x, q_y,\phi) \dd q_x \, \dd q_y 
+	%\end{equation*}
 	
 	\end{frame}
+
+	
+	
+	\begin{frame}
+	\justifying
+	\vspace*{22pt}
+		$\bullet$ Quadrature de Gauss-Legendre : \\
+		\vspace*{5pt}
+	$\quad \diamond$ Utilisation de $\{\xi_i\}_i$ points d'intégrations de Gauss-Legendre (zéros du polynômes de Legendre d'ordre $n_{gl}$) sur $[-1,1]$ et $\{w_i\}_i$ les poids associés :
+	
+	{\small
+	\begin{equation*}
+		I_2(t, \phi) \simeq \pi^2 \sum_{i=1}^{n_{gl}} \sum_{j=1}^{n_{gl}} w_i w_j \partial_t \Rc(t, q_i, q_j) \, {\left\{ \frac{1}{\Gamma^{(2)}(t, q_i, q_j, \phi) + \Rc(t, q_i, q_j)} \right\}}^{2} 
+	\end{equation*}
+	$\quad$ Avec $\displaystyle q_i = \frac{\pi}{2}\(  \xi_i +1 \)$} \\
+	
+	
+	\vspace*{5pt}
+	$\quad \diamond$ Utilisation des symétries de $\Gamma^{(2)}$ pour réduire les calculs.
 	
 	\vspace*{11pt}
+	$\bullet$ Second problème : le calcul de $\displaystyle J_3(t, p_x, p_y,\phi)$ avec cette technique \\
+	\vspace*{5pt}
+	$\quad \diamond$  Necessité d'intégrer des fonctions de $(p_x +q_x, p_y + q_y)$ \\
+
+		$\quad \diamond$ $\displaystyle p_j = \frac{\pi}{2}\(  \xi_j +1 \)$, $\displaystyle q_i = \frac{\pi}{2}\(  \xi_i +1 \)$ 
+	$\rightarrow$ on ne connait pas $\Gamma^{(2)}(t, q_i+p_j, ...)$
+	
+$\quad \diamond$ La solution : interpoler $\Gamma^{(2)}$
+	
+	\end{frame}
+
 	
 
 	
@@ -609,24 +622,12 @@ $\quad$ Recherche d'une solution particulière dite "de point fixe".
 	
 	$\bullet$ Interpolation de Tchebytchev en deux dimensions : \\
 	
-	\vspace*{11pt}
-	
-	
-	\only<1>{Soit $f$ une fonction de deux variables de $[a,b]^2$ dans $\R$. On note $\{x_n\}_{n \in \bbrac{1,n_c}}$ l'ensemble des $n_c$ racines du polynôme de Tchebytchev d'ordre $n_c$. \\
+	On note maintenant $\{x_n\}_{n \in \bbrac{1,n_c}}$ l'ensemble des $n_c$ racines dans $[-1,1]$ du polynôme de Tchebytchev d'ordre $n_c$. \\
 	\vspace*{8pt}
-	On introduit : 
+	On introduit : $ \displaystyle \mat{F} = \left<   \Gamma^{(2)}\(t_i, \pi x_m, \pi x_n, \phi_j  \)   \right>_{m,n} $
 	
-\begin{equation*}
-	\mat{F} = \( \(  f\(\frac{a+b}{2} + x_m\frac{b-a}{2}, \frac{a+b}{2} + x_n\frac{b-a}{2}\)     \)  \)_{m,n} 
-\end{equation*}
 
-\vspace*{8pt}
-$\Rightarrow$ Approximation de rang faible de cette matrice
-
-}	
-	\only<2>{
-	
-	Algorithme d'approximation par élimination Gaussienne
+$\Rightarrow$ Approximation de rang faible de $\mat{F}$ par élimination gaussienne
 	
 	\begin{algorithm}[H]
   \begin{algorithmic}[1]
@@ -646,11 +647,24 @@ $\Rightarrow$ Approximation de rang faible de cette matrice
 f(x,y) \simeq \sum_{j=1}^Q d_jc^j(y)r^j(x)
 \end{equation*}
 
-}
+
 	
 	\end{frame}
 	
+\subsection{Vue d'ensemble}
 
+\begin{frame}
+	\justifying
+	%\vspace*{22pt}
+	\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale = 0.35]{Diagramme_Code_2_Bis.pdf}
+	\label{fig:schemaIsing}
+	\end{center}
+\end{figure}
+		
+
+\end{frame}	
 		
 		\section{Etude du modèle d'Ising 2D : Résultats}
 		\sommaire{}
@@ -660,9 +674,9 @@ f(x,y) \simeq \sum_{j=1}^Q d_jc^j(y)r^j(x)
 	
 	\begin{figure}[H]
 \begin{center}
-	\includegraphics[scale=0.7]{MesuRes.pdf}
+	\includegraphics[scale=0.3]{MesuRes2.pdf}
 \end{center}
-\caption{Évolution de $\eta_k$ en fonction de $t$ pour différentes valeurs de la températue $T$.}
+\caption{Évolution de $\eta$ en fonction de $t$ pour différentes valeurs de la températue $T$.}
 \label{fig:etaMesu}
 \end{figure}
 
@@ -671,9 +685,9 @@ $\bullet$ Encadrement de la température critique
 2.350  < T_c^{BMW}  < 2.375 
 \end{equation}
 
-$\bullet $ Comparaison à la température théorique attendue $T_c^{th} \simeq 2.269$
+$\bullet $ Comparaison à la température théorique attendue $T_c^{exact} \simeq 2.269$
 \begin{equation}
-	err = \frac{ |T_c^{BMW} - T_c^{th}|}{T_c^{th}} \sim 4 \%
+	err = \frac{ |T_c^{BMW} - T_c^{exact}|}{T_c^{exact}} \sim 4 \%
 \end{equation}
 
 
@@ -703,8 +717,12 @@ $\bullet $ Comparaison à la température théorique attendue $T_c^{th} \simeq 2
 	$\quad \diamond$ Mise en place de différentes techniques numériques\\
 	$\quad \diamond$ Tentative de résolution de problèmes de temps de calculs\\
 	$\quad \diamond$ Résultats pour une première série de test : erreur de 4 \%\\
-	$\quad \diamond$ Résultats contrastée car erreurs numériques
+	$\quad \diamond$ Résultats contrastée car erreurs numériques \\
 	
+		\vspace*{15pt}
+	
+	
+	$\Rightarrow$ Calcul de $T_c$ possible avec cette méthode !
 	
 	\end{frame}
 	

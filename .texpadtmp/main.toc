@@ -2,14 +2,14 @@
 \select@language {french}
 \beamer@sectionintoc {1}{Introduction du probl\IeC {\`e}me}{3}{0}{1}
 \beamer@subsectionintoc {1}{1}{Physique statistique et mod\IeC {\`e}le d'Ising}{3}{0}{1}
-\beamer@subsectionintoc {1}{2}{Objectifs de l'\IeC {\'e}tude}{8}{0}{1}
-\beamer@sectionintoc {2}{Etude du mod\IeC {\`e}le d'Ising 2D : Mise en \IeC {\'e}quation}{11}{0}{2}
-\beamer@subsectionintoc {2}{1}{Calcul de la fonction de partition}{11}{0}{2}
-\beamer@subsectionintoc {2}{2}{Le NPRG et les \IeC {\'e}quations BMW}{13}{0}{2}
-\beamer@subsectionintoc {2}{3}{La r\IeC {\'e}solution en trois \IeC {\'e}tapes}{14}{0}{2}
-\beamer@sectionintoc {3}{Etude du mod\IeC {\`e}le d'Ising 2D : M\IeC {\'e}thodes num\IeC {\'e}riques}{15}{0}{3}
-\beamer@subsectionintoc {3}{1}{Discr\IeC {\'e}tisation en temps et en champs}{15}{0}{3}
-\beamer@subsectionintoc {3}{2}{Int\IeC {\'e}gration de Gauss Legendre}{17}{0}{3}
-\beamer@subsectionintoc {3}{3}{Interpolation de Tchebytchev}{18}{0}{3}
-\beamer@sectionintoc {4}{Etude du mod\IeC {\`e}le d'Ising 2D : R\IeC {\'e}sultats}{21}{0}{4}
-\beamer@sectionintoc {5}{Conclusions}{23}{0}{5}
+\beamer@subsectionintoc {1}{2}{Objectifs de l'\IeC {\'e}tude}{5}{0}{1}
+\beamer@sectionintoc {2}{Etude du mod\IeC {\`e}le d'Ising 2D : Mise en \IeC {\'e}quation}{7}{0}{2}
+\beamer@subsectionintoc {2}{1}{Le groupe de renormalisation non perturbatif (NPRG)}{8}{0}{2}
+\beamer@subsectionintoc {2}{2}{L'\IeC {\'e}quation de l'approximation BMW}{9}{0}{2}
+\beamer@sectionintoc {3}{Etude du mod\IeC {\`e}le d'Ising 2D : M\IeC {\'e}thodes num\IeC {\'e}riques}{10}{0}{3}
+\beamer@subsectionintoc {3}{1}{Discr\IeC {\'e}tisation en temps et en champs}{10}{0}{3}
+\beamer@subsectionintoc {3}{2}{Int\IeC {\'e}gration de Gauss Legendre}{12}{0}{3}
+\beamer@subsectionintoc {3}{3}{Interpolation de Tchebytchev}{14}{0}{3}
+\beamer@subsectionintoc {3}{4}{Vue d'ensemble}{15}{0}{3}
+\beamer@sectionintoc {4}{Etude du mod\IeC {\`e}le d'Ising 2D : R\IeC {\'e}sultats}{16}{0}{4}
+\beamer@sectionintoc {5}{Conclusions}{18}{0}{5}
