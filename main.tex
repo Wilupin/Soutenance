@@ -233,7 +233,7 @@ $ \bullet $ $\|\pv \|_2 \in [0, \Lambda]$
     
     Méthode du Groupe de Renormalisation Non Perturbatif (NPRG)\\
 	Résolution par approximation BMW (Blaizot - Méndez-Galain - Wschebor) \\
-	Des codes existants mettent déjà en oeuvre cette résolution \\
+	Des codes existants mettent déjà en oeuvre la méthode NPRG + BMW \\
 	
 	\vspace*{11pt}
 	
@@ -415,6 +415,9 @@ $\bullet$ Avec cette notation $\Hc$ dépend de la température $T$.
 	\label{fig:schemaIsing}
 	\end{center}
 	\end{figure}
+	
+	$\bullet$ Transformation continue vers le modèle étudié (asymptotiquement).\\ 
+$\bullet$ $t$ : temps du groupe de renormalisation (de RG).
   \end{frame}
 
 
@@ -440,7 +443,7 @@ $\bullet$ L'équation de  BMW à résoudre : \\
 \textit{Avec les notations}
 \begin{equation*}
 \begin{split}
-	J_n(t, \pv,\phi) & = \int_\qv \partial_t \Rc(t,\qv) \, G(t,\pv+\qv, \phi) \,G^{n-1}(t,\qv, \phi) \, , \quad \\ I_n(t,\phi) &  = J_n(t,\pv = 0,\phi). \\
+	J_n(t, \pv,\phi) & = \int_{[-\pi, \pi]^2} \partial_t \Rc(t,\qv) \, G(t,\pv+\qv, \phi) \,G^{n-1}(t,\qv, \phi)  \dd \qv \, , \quad \\ I_n(t,\phi) &  = J_n(t,\pv = 0,\phi) \\
 G(t,\qv, \phi) & = \frac{1}{\Gamma^{(2)}(t,\qv,\phiv)+ \Rc(t,\qv)} \quad \quad \textit{(propagateur)}  \\
 \Rc(t,\qv) & \in \Cc^{\infty}(\R^{3}) \qquad \qquad \qquad \qquad \quad \textit{(régulateur)} 
 \end{split}
@@ -587,13 +590,13 @@ La solution : Utiliser des variables $(\tq_x, \tq_y) = (e^{-t}q_x, e^{-t}q_y)$.
 	\vspace*{22pt}
 		$\bullet$ Quadrature de Gauss-Legendre : \\
 		\vspace*{5pt}
-	$\quad \diamond$ Utilisation de $\{\xi_i\}_i$ points d'intégrations de Gauss-Legendre (zéros du polynômes de Legendre d'ordre $n_{gl}$) sur $[-1,1]$ et $\{w_i\}_i$ les poids associés :
+	$\quad \diamond$ On note $\{\xi_i\}_i$ les zéros du polynômes de Legendre d'ordre $n_{gl}+1$ et $\{w_i\}_i$ les poids de la quadrature associés :
 	
 	{\small
 	\begin{equation*}
-		I_2(t, \phi) \simeq \pi^2 \sum_{i=1}^{n_{gl}} \sum_{j=1}^{n_{gl}} w_i w_j \partial_t \Rc(t, q_i, q_j) \, {\left\{ \frac{1}{\Gamma^{(2)}(t, q_i, q_j, \phi) + \Rc(t, q_i, q_j)} \right\}}^{2} 
+		I_2(t, \phi) \simeq \pi^2 \sum_{i=1}^{n_{gl}} \sum_{j=1}^{n_{gl}} w_i w_j \partial_t \Rc(t_n, q_i, q_j) \, {\left\{ \frac{1}{\Gamma^{(2)}(t_n, q_i, q_j, \phi_m) + \Rc(t_n, q_i, q_j)} \right\}}^{2} 
 	\end{equation*}
-	$\quad$ Avec $\displaystyle q_i = \frac{\pi}{2}\(  \xi_i +1 \)$} \\
+	$\quad$ Avec $\displaystyle q_i = \frac{\pi}{2}\(  \xi_i +1 \)$} (points d'intégration de Gauss-Legendre) \\
 	
 	
 	\vspace*{5pt}
@@ -602,10 +605,8 @@ La solution : Utiliser des variables $(\tq_x, \tq_y) = (e^{-t}q_x, e^{-t}q_y)$.
 	\vspace*{11pt}
 	$\bullet$ Second problème : le calcul de $\displaystyle J_3(t, p_x, p_y,\phi)$ avec cette technique \\
 	\vspace*{5pt}
-	$\quad \diamond$  Necessité d'intégrer des fonctions de $(p_x +q_x, p_y + q_y)$ \\
-
-		$\quad \diamond$ $\displaystyle p_j = \frac{\pi}{2}\(  \xi_j +1 \)$, $\displaystyle q_i = \frac{\pi}{2}\(  \xi_i +1 \)$ 
-	$\rightarrow$ on ne connait pas $\Gamma^{(2)}(t, q_i+p_j, ...)$
+	$\quad \diamond$ Impossible de ne connaitre $\Gamma^{(2)}$ qu'au points de Gauss-Legendre \\
+	$\quad \diamond$ Incompatibilité lors du passage de $t_n \rightarrow t_{n+1}$
 	
 $\quad \diamond$ La solution : interpoler $\Gamma^{(2)}$
 	
@@ -621,11 +622,11 @@ $\quad \diamond$ La solution : interpoler $\Gamma^{(2)}$
 	\vspace*{22pt}
 	
 	$\bullet$ Interpolation de Tchebytchev en deux dimensions : \\
-	
-	On note maintenant $\{x_n\}_{n \in \bbrac{1,n_c}}$ l'ensemble des $n_c$ racines dans $[-1,1]$ du polynôme de Tchebytchev d'ordre $n_c$. \\
 	\vspace*{8pt}
-	On introduit : $ \displaystyle \mat{F} = \left<   \Gamma^{(2)}\(t_i, \pi x_m, \pi x_n, \phi_j  \)   \right>_{m,n} $
-	
+	On note  $\{x_n\}_n$ les zéros du polynôme de Tchebytchev d'ordre $n_c$. \\
+	\vspace*{4pt}
+	On introduit : $ \displaystyle \mat{F} = \(   \Gamma^{(2)}\(t_k, \pi x_m, \pi x_n, \phi_l  \)   \)_{m,n} $ \\
+	\vspace*{4pt}
 
 $\Rightarrow$ Approximation de rang faible de $\mat{F}$ par élimination gaussienne
 	
@@ -644,7 +645,7 @@ $\Rightarrow$ Approximation de rang faible de $\mat{F}$ par élimination gaussie
   \vspace*{-15pt}
 \begin{equation*}
 \mat{F} \simeq \sum_{j=1}^Q d_j \mat{C}^j \mat{R}^j \Rightarrow 
-f(x,y) \simeq \sum_{j=1}^Q d_jc^j(y)r^j(x)
+\Gamma^{(2)}(t_k, q_x, q_y, \phi_l) \simeq \sum_{j=1}^Q d_j c^j(t_k, q_y, \phi_l)r^j(t_k, q_x, \phi_l)
 \end{equation*}
 
 
@@ -715,14 +716,14 @@ $\bullet $ Comparaison à la température théorique attendue $T_c^{exact} \sime
 	$\bullet$ Seconde étude (Ising 2D) : \\
 		\vspace*{5pt}
 	$\quad \diamond$ Mise en place de différentes techniques numériques\\
-	$\quad \diamond$ Tentative de résolution de problèmes de temps de calculs\\
+	$\quad \diamond$ Tentative de résolution de problèmes de temps de calcul\\
 	$\quad \diamond$ Résultats pour une première série de test : erreur de 4 \%\\
-	$\quad \diamond$ Résultats contrastée car erreurs numériques \\
+	$\quad \diamond$ Résultats contrastés car erreurs numériques \\
 	
 		\vspace*{15pt}
 	
 	
-	$\Rightarrow$ Calcul de $T_c$ possible avec cette méthode !
+	$\Rightarrow$ Calcul de $T_c$ semble possible avec cette méthode !
 	
 	\end{frame}
 	
